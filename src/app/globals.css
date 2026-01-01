@@ -1,26 +1,215 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #0d1117;
+  --bg-tertiary: #161b22;
+  --bg-card: #1a1f2e;
+
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted: #6e7681;
+
+  --accent-cyan: #00ffff;
+  --accent-green: #00ff41;
+  --accent-blue: #58a6ff;
+  --accent-purple: #bc8cff;
+  --accent-red: #ff6b6b;
+
+  --glow-cyan: 0 0 20px rgba(0, 255, 255, 0.5);
+  --glow-green: 0 0 20px rgba(0, 255, 65, 0.5);
+
+  --border-color: #30363d;
+
+  /* Theme-aware accent colors */
+  --accent-primary: #00ffff;
+  --accent-secondary: #00ff41;
+  --glow-primary: 0 0 20px rgba(0, 255, 255, 0.5);
+  --glow-secondary: 0 0 20px rgba(0, 255, 65, 0.5);
+}
+
+/* Cyber Green Theme (Default - Matrix) */
+[data-theme="cyber-green"] {
+  --accent-primary: #00ffff;
+  --accent-secondary: #00ff41;
+  --accent-cyan: #00ffff;
+  --accent-green: #00ff41;
+  --glow-primary: 0 0 20px rgba(0, 255, 255, 0.5);
+  --glow-secondary: 0 0 20px rgba(0, 255, 65, 0.5);
+  --glow-cyan: 0 0 20px rgba(0, 255, 255, 0.5);
+  --glow-green: 0 0 20px rgba(0, 255, 65, 0.5);
+}
+
+/* Cyber Red Theme (Crimson) */
+[data-theme="cyber-red"] {
+  --accent-primary: #ff4141;
+  --accent-secondary: #ff8c00;
+  --accent-cyan: #ff4141;
+  --accent-green: #ff8c00;
+  --glow-primary: 0 0 20px rgba(255, 65, 65, 0.5);
+  --glow-secondary: 0 0 20px rgba(255, 140, 0, 0.5);
+  --glow-cyan: 0 0 20px rgba(255, 65, 65, 0.5);
+  --glow-green: 0 0 20px rgba(255, 140, 0, 0.5);
+}
+
+/* Cyber Purple Theme (Neon) */
+[data-theme="cyber-purple"] {
+  --accent-primary: #bc8cff;
+  --accent-secondary: #ff6bef;
+  --accent-cyan: #bc8cff;
+  --accent-green: #ff6bef;
+  --glow-primary: 0 0 20px rgba(188, 140, 255, 0.5);
+  --glow-secondary: 0 0 20px rgba(255, 107, 239, 0.5);
+  --glow-cyan: 0 0 20px rgba(188, 140, 255, 0.5);
+  --glow-green: 0 0 20px rgba(255, 107, 239, 0.5);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-cyan);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-green);
+}
+
+/* Selection */
+::selection {
+  background: var(--accent-cyan);
+  color: var(--bg-primary);
+}
+
+/* Glitch Animation */
+@keyframes glitch-1 {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+}
+
+@keyframes glitch-2 {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(2px, -2px); }
+  40% { transform: translate(2px, 2px); }
+  60% { transform: translate(-2px, -2px); }
+  80% { transform: translate(-2px, 2px); }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes scan {
+  0% { top: 0; }
+  100% { top: 100%; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0, 255, 65, 0.7); }
+  50% { opacity: 0.8; box-shadow: 0 0 0 10px rgba(0, 255, 65, 0); }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes cursor-blink {
+  0%, 50% { border-color: var(--accent-cyan); }
+  51%, 100% { border-color: transparent; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100px); }
+  50%, 100% { transform: translateX(400px); }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+  25%, 75% { opacity: 0.9; }
+}
+
+@keyframes glitch-text {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(1px, -1px); }
+  60% { transform: translate(-1px, -1px); }
+  80% { transform: translate(1px, 1px); }
+}
+
+@keyframes fall {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes scanLine {
+  0%, 100% { left: 0%; opacity: 0; }
+  10% { opacity: 0.5; }
+  50% { left: 100%; opacity: 0.5; }
+  60% { opacity: 0; }
+}
+
+/* Easter Egg Animations */
+@keyframes easterEggFlash {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes scanDown {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes glitchText {
+  0%, 100% { transform: translate(0); filter: hue-rotate(0deg); }
+  20% { transform: translate(-3px, 3px); filter: hue-rotate(90deg); }
+  40% { transform: translate(3px, -3px); filter: hue-rotate(180deg); }
+  60% { transform: translate(-3px, -3px); filter: hue-rotate(270deg); }
+  80% { transform: translate(3px, 3px); filter: hue-rotate(360deg); }
+}
+
+@keyframes matrixFall {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
 }
