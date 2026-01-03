@@ -29,7 +29,31 @@ export default function CommandPalette() {
     { id: 'theme-green', label: 'Theme: Matrix (Green)', icon: '💚', action: () => setTheme('cyber-green') },
     { id: 'theme-red', label: 'Theme: Crimson (Red)', icon: '❤️', action: () => setTheme('cyber-red') },
     { id: 'theme-purple', label: 'Theme: Neon (Purple)', icon: '💜', action: () => setTheme('cyber-purple') },
+    // Secret Commands
+    { id: 'sudo-hire', label: 'sudo hire-me', icon: '🔐', action: () => showSecret('ACCESS GRANTED: Hiring sequence initiated... 🚀') },
+    { id: 'hack', label: 'hack the planet', icon: '🌍', action: () => showSecret('HACK THE PLANET! 💻🔥') },
+    { id: 'matrix', label: 'enter the matrix', icon: '💊', action: () => showSecret('You took the red pill... Welcome to the real world.') },
+    { id: 'ping', label: 'ping jeffin', icon: '📡', action: () => showSecret('PONG! Jeffin is online and ready to connect!') },
+    { id: 'whoami', label: 'whoami', icon: '🤖', action: () => showSecret('You are a potential employer/collaborator viewing an awesome portfolio!') },
+    { id: 'coffee', label: 'brew coffee', icon: '☕', action: () => showSecret('☕ Coffee brewing... Productivity increased by 200%!') },
   ];
+
+  const showSecret = (message: string) => {
+    setIsOpen(false);
+    const overlay = document.createElement('div');
+    overlay.className = 'fixed inset-0 z-[10001] flex items-center justify-center bg-black/80';
+    overlay.innerHTML = `
+      <div class="text-center font-mono" style="animation: fadeIn 0.3s ease-out">
+        <p style="color: var(--accent-cyan); font-size: 24px; text-shadow: 0 0 20px var(--accent-cyan);">${message}</p>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+    setTimeout(() => {
+      overlay.style.opacity = '0';
+      overlay.style.transition = 'opacity 0.5s ease-out';
+      setTimeout(() => overlay.remove(), 500);
+    }, 2000);
+  };
 
   const scrollTo = (id: string) => {
     if (id === 'top') {

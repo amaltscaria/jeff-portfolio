@@ -272,3 +272,104 @@ body {
     transform: translateY(50px) scale(0);
   }
 }
+
+/* Floating Parallax Animation */
+@keyframes floatParallax {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-10px) rotate(-3deg);
+  }
+  75% {
+    transform: translateY(-30px) translateX(5px) rotate(3deg);
+  }
+}
+
+/* Neon Flicker Animation */
+@keyframes neonFlicker {
+  0%, 100% { opacity: 1; }
+  10% { opacity: 0.8; }
+  20% { opacity: 1; }
+  30% { opacity: 0.9; }
+  40% { opacity: 1; }
+  50% { opacity: 0.7; }
+  60% { opacity: 1; }
+  70% { opacity: 0.85; }
+  80% { opacity: 1; }
+  90% { opacity: 0.9; }
+}
+
+/* Cyber Grid Animations */
+@keyframes gridMoveVertical {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(80px); }
+}
+
+@keyframes gridMoveHorizontal {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(80px); }
+}
+
+@keyframes scanVertical {
+  0%, 100% { top: -5%; }
+  50% { top: 105%; }
+}
+
+/* Corner Pulse Animation */
+@keyframes cornerPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Card Pulse Glow */
+@keyframes cardPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.3), 0 0 50px rgba(0, 255, 255, 0.1);
+  }
+}
+
+.card-pulse {
+  animation: cardPulse 3s ease-in-out infinite;
+}
+
+/* Glitch Hover for Nav */
+.nav-glitch {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-glitch:hover {
+  text-shadow:
+    2px 0 var(--accent-cyan),
+    -2px 0 var(--accent-green);
+  animation: navGlitch 0.3s ease;
+}
+
+@keyframes navGlitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 1px); }
+  40% { transform: translate(2px, -1px); }
+  60% { transform: translate(-1px, -1px); }
+  80% { transform: translate(1px, 1px); }
+}
+
+/* Certification Badge Glow */
+.cert-glow {
+  animation: certGlow 2s ease-in-out infinite;
+}
+
+@keyframes certGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.6));
+  }
+}

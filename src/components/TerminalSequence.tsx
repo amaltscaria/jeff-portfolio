@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 
 interface TerminalLine {
   command: string;
@@ -9,8 +9,17 @@ interface TerminalLine {
   outputDelay?: number;
 }
 
-const terminalLines: TerminalLine[] = [
-  { command: 'whoami', output: 'Jeffin Thomas', commandDelay: 0 },
+const getGreeting = (): string => {
+  const hour = new Date().getHours();
+  if (hour >= 5 && hour < 12) return 'Good morning';
+  if (hour >= 12 && hour < 17) return 'Good afternoon';
+  if (hour >= 17 && hour < 21) return 'Good evening';
+  return 'Good night';
+};
+
+const getTerminalLines = (): TerminalLine[] => [
+  { command: 'echo $GREETING', output: `${getGreeting()}, visitor! Welcome to my terminal.`, commandDelay: 0 },
+  { command: 'whoami', output: 'Jeffin Thomas', commandDelay: 100 },
   { command: 'cat role.txt', output: 'Cybersecurity Professional & Network Engineer', commandDelay: 100 },
   { command: 'cat education.txt', output: 'Master of Cybersecurity — Monash University (2025)', commandDelay: 100 },
   { command: 'cat location.txt', output: 'Melbourne, Australia', commandDelay: 100 },
@@ -24,6 +33,9 @@ export default function TerminalSequence() {
   const [showCursor, setShowCursor] = useState(true);
   const [showName, setShowName] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
+
+  // Memoize terminal lines to prevent re-creation on every render
+  const terminalLines = useMemo(() => getTerminalLines(), []);
 
   // Cursor blink
   useEffect(() => {

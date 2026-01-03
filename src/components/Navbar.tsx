@@ -26,7 +26,7 @@ export default function Navbar() {
         {/* Desktop Nav Links */}
         <div className="hidden md:flex items-center" style={{gap: '32px'}}>
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="font-mono text-sm text-[var(--text-secondary)] hover:text-[var(--accent-cyan)] transition-colors">
+            <a key={link.href} href={link.href} className="nav-glitch font-mono text-sm text-[var(--text-secondary)] hover:text-[var(--accent-cyan)] transition-colors">
               {link.label}
             </a>
           ))}

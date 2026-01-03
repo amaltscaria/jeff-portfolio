@@ -19,6 +19,11 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import CommandPalette from "@/components/CommandPalette";
 import CursorTrail from "@/components/CursorTrail";
 import ClickRipple from "@/components/ClickRipple";
+import MouseSpotlight from "@/components/MouseSpotlight";
+import FloatingElements from "@/components/FloatingElements";
+import Parallax3DImage from "@/components/Parallax3DImage";
+import CyberGrid from "@/components/CyberGrid";
+import ScanLine from "@/components/ScanLine";
 
 export default function Home() {
   return (
@@ -34,6 +39,10 @@ export default function Home() {
       <CommandPalette />
       <CursorTrail />
       <ClickRipple />
+      <MouseSpotlight />
+      <FloatingElements />
+      <CyberGrid />
+      <ScanLine />
 
       {/* Hero Section */}
       <section className="relative z-10 min-h-screen flex items-center justify-center px-[5%] flex-col lg:flex-row" style={{gap: '64px', paddingTop: '100px', paddingBottom: '80px'}}>
@@ -55,8 +64,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Hero Image */}
-        <div className="relative">
+        {/* Hero Image with 3D Parallax */}
+        <Parallax3DImage className="relative" intensity={20}>
           <div className="relative w-[280px] h-[280px] lg:w-[320px] lg:h-[320px] rounded-full overflow-hidden border-[3px] border-[var(--accent-cyan)] shadow-[var(--glow-cyan)]">
             <Image
               src="/jeffin-photo.jpeg"
@@ -74,7 +83,7 @@ export default function Home() {
             <div className="w-2 h-2 bg-[var(--accent-green)] rounded-full animate-[pulse_2s_infinite]"></div>
             <span>Available for hire</span>
           </div>
-        </div>
+        </Parallax3DImage>
       </section>
 
       {/* Divider after Hero */}
@@ -117,25 +126,25 @@ export default function Home() {
           {/* Stats Grid - Centered */}
           <ScrollAnimation delay={200}>
             <div className="grid grid-cols-2 md:grid-cols-4 w-full max-w-4xl" style={{marginTop: '40px', gap: '24px'}}>
-              <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg text-center hover:border-[var(--accent-cyan)] transition-all duration-300 hover:-translate-y-1" style={{padding: '24px'}}>
+              <div className="card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg text-center hover:border-[var(--accent-cyan)] transition-all duration-300 hover:-translate-y-1" style={{padding: '24px'}}>
                 <span className="text-4xl font-bold font-mono text-[var(--accent-cyan)] block">
                   <AnimatedCounter end={5} suffix="+" duration={1500} />
                 </span>
                 <span className="text-[var(--text-secondary)] text-sm block" style={{marginTop: '8px'}}>Certifications</span>
               </div>
-              <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg text-center hover:border-[var(--accent-cyan)] transition-all duration-300 hover:-translate-y-1" style={{padding: '24px'}}>
+              <div className="card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg text-center hover:border-[var(--accent-cyan)] transition-all duration-300 hover:-translate-y-1" style={{padding: '24px', animationDelay: '0.5s'}}>
                 <span className="text-4xl font-bold font-mono text-[var(--accent-cyan)] block">
                   <AnimatedCounter end={2} suffix="+" duration={1500} />
                 </span>
                 <span className="text-[var(--text-secondary)] text-sm block" style={{marginTop: '8px'}}>Years Experience</span>
               </div>
-              <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg text-center hover:border-[var(--accent-cyan)] transition-all duration-300 hover:-translate-y-1" style={{padding: '24px'}}>
+              <div className="card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg text-center hover:border-[var(--accent-cyan)] transition-all duration-300 hover:-translate-y-1" style={{padding: '24px', animationDelay: '1s'}}>
                 <span className="text-4xl font-bold font-mono text-[var(--accent-cyan)] block">
                   <AnimatedCounter end={10} suffix="+" duration={1500} />
                 </span>
                 <span className="text-[var(--text-secondary)] text-sm block" style={{marginTop: '8px'}}>Security Projects</span>
               </div>
-              <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg text-center hover:border-[var(--accent-cyan)] transition-all duration-300 hover:-translate-y-1" style={{padding: '24px'}}>
+              <div className="card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg text-center hover:border-[var(--accent-cyan)] transition-all duration-300 hover:-translate-y-1" style={{padding: '24px', animationDelay: '1.5s'}}>
                 <span className="text-4xl font-bold font-mono text-[var(--accent-green)] block">MSc</span>
                 <span className="text-[var(--text-secondary)] text-sm block" style={{marginTop: '8px'}}>Cybersecurity</span>
               </div>
@@ -274,48 +283,48 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full max-w-5xl" style={{gap: '24px'}}>
 
             {/* CCNP */}
-            <TiltCard className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px'}}>
-              <div className="text-3xl" style={{marginBottom: '16px'}}>🏆</div>
+            <TiltCard className="card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px'}}>
+              <div className="cert-glow text-3xl" style={{marginBottom: '16px'}}>🏆</div>
               <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '8px'}}>CCNP</h3>
               <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '8px'}}>Cisco Certified Network Professional</p>
               <span className="text-[var(--accent-green)] font-mono text-xs">Cisco</span>
             </TiltCard>
 
             {/* CCNA */}
-            <TiltCard className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px'}}>
-              <div className="text-3xl" style={{marginBottom: '16px'}}>🏆</div>
+            <TiltCard className="card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px', animationDelay: '0.3s'}}>
+              <div className="cert-glow text-3xl" style={{marginBottom: '16px'}}>🏆</div>
               <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '8px'}}>CCNA</h3>
               <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '8px'}}>Cisco Certified Network Associate</p>
               <span className="text-[var(--accent-green)] font-mono text-xs">Cisco</span>
             </TiltCard>
 
             {/* AWS */}
-            <TiltCard className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px'}}>
-              <div className="text-3xl" style={{marginBottom: '16px'}}>☁️</div>
+            <TiltCard className="card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px', animationDelay: '0.6s'}}>
+              <div className="cert-glow text-3xl" style={{marginBottom: '16px'}}>☁️</div>
               <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '8px'}}>AWS Solutions Architect</h3>
               <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '8px'}}>Associate Level Certification</p>
               <span className="text-[var(--accent-green)] font-mono text-xs">Amazon Web Services</span>
             </TiltCard>
 
             {/* RHCE */}
-            <TiltCard className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px'}}>
-              <div className="text-3xl" style={{marginBottom: '16px'}}>🐧</div>
+            <TiltCard className="card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px', animationDelay: '0.9s'}}>
+              <div className="cert-glow text-3xl" style={{marginBottom: '16px'}}>🐧</div>
               <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '8px'}}>RHCE</h3>
               <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '8px'}}>Red Hat Certified Engineer</p>
               <span className="text-[var(--accent-green)] font-mono text-xs">Red Hat</span>
             </TiltCard>
 
             {/* Cyber Security Training */}
-            <TiltCard className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px'}}>
-              <div className="text-3xl" style={{marginBottom: '16px'}}>🔐</div>
+            <TiltCard className="card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px', animationDelay: '1.2s'}}>
+              <div className="cert-glow text-3xl" style={{marginBottom: '16px'}}>🔐</div>
               <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '8px'}}>Cyber Security Training</h3>
               <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '8px'}}>Professional Security Training Program</p>
               <span className="text-[var(--accent-green)] font-mono text-xs">UST Global</span>
             </TiltCard>
 
             {/* Master's Degree */}
-            <TiltCard className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px'}}>
-              <div className="text-3xl" style={{marginBottom: '16px'}}>🎓</div>
+            <TiltCard className="card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px', animationDelay: '1.5s'}}>
+              <div className="cert-glow text-3xl" style={{marginBottom: '16px'}}>🎓</div>
               <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '8px'}}>Master of Cybersecurity</h3>
               <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '8px'}}>Graduated December 2025</p>
               <span className="text-[var(--accent-green)] font-mono text-xs">Monash University</span>
@@ -580,7 +589,7 @@ export default function Home() {
 
           {/* Footer */}
           <div className="text-center font-mono text-[var(--text-muted)] text-sm" style={{marginTop: '64px'}}>
-            <p>&copy; 2025 Jeffin Thomas. Built with Next.js</p>
+            <p>&copy; 2026 Jeffin Thomas</p>
             <p style={{marginTop: '8px'}}>
               <span className="text-[var(--accent-green)]">&lt;/&gt;</span> with <span className="text-[var(--accent-red)]">❤</span> in Melbourne
             </p>
