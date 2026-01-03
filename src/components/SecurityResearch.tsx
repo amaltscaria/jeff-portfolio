@@ -164,8 +164,8 @@ export default function SecurityResearch() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
   return (
-      <section id="research" className="relative z-10 px-[5%]" style={{ padding: '96px 0' }}>
-        <div className="w-full flex flex-col items-center">
+      <section id="research" className="relative z-10" style={{ padding: '96px 5%' }}>
+        <div className="w-full flex flex-col">
           {/* Section Header */}
           <div className="text-center" style={{ marginBottom: '64px' }}>
             <p className="font-mono text-[var(--accent-cyan)]" style={{ marginBottom: '8px' }}>
@@ -181,7 +181,7 @@ export default function SecurityResearch() {
           </div>
 
           {/* Case Studies Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 w-full max-w-6xl" style={{ gap: '24px' }}>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 w-full" style={{ gap: '24px' }}>
             {caseStudies.map((study) => (
               <CyberCorners key={study.id} color="cyan" size="md">
                 <div
@@ -345,9 +345,9 @@ export default function SecurityResearch() {
 
           {/* Stats Bar */}
           <div
-            className="grid grid-cols-2 md:grid-cols-4 w-full max-w-4xl bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg"
-            style={{ padding: '24px', marginTop: '64px', gap: '16px' }}
-          >
+              className="grid grid-cols-2 md:grid-cols-4 w-full max-w-4xl mx-auto bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg"
+              style={{ padding: '24px', marginTop: '64px', gap: '16px' }}
+            >
             <div className="text-center">
               <div className="text-3xl font-bold text-[var(--accent-cyan)]">6+</div>
               <div className="font-mono text-xs text-[var(--text-muted)]">SECURITY_REPORTS</div>

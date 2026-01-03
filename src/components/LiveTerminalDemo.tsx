@@ -374,7 +374,7 @@ export default function LiveTerminalDemo() {
   };
 
   return (
-    <section id="terminal-demo" className="relative z-10 px-[5%]" style={{ padding: '96px 0' }}>
+    <section id="terminal-demo" className="relative z-10" style={{ padding: '96px 5%' }}>
       <div className="w-full flex flex-col items-center">
         {/* Section Header */}
         <div className="text-center" style={{ marginBottom: '48px' }}>

@@ -300,36 +300,37 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       style={{ animationDelay: `${index * 0.1}s` }}
     >
       {/* Header with icon and gradient */}
-      <div className="h-24 bg-gradient-to-br from-[var(--bg-tertiary)] to-[var(--bg-secondary)] flex items-center justify-between px-6">
+      <div className="h-24 bg-gradient-to-br from-[var(--bg-tertiary)] to-[var(--bg-secondary)] flex items-center justify-between" style={{padding: '0 24px'}}>
         <span className="text-5xl">{project.icon}</span>
-        <div className="flex flex-col items-end gap-2">
-          <span className={`text-xs font-mono px-2 py-1 rounded border ${typeInfo.color}`}>
+        <div className="flex flex-col items-end" style={{gap: '8px'}}>
+          <span className={`text-xs font-mono rounded border ${typeInfo.color}`} style={{padding: '4px 8px'}}>
             {typeInfo.label}
           </span>
           <span className="text-xs font-mono text-[var(--accent-green)]">{project.date}</span>
         </div>
       </div>
 
-      <div className="p-6">
+      <div style={{padding: '24px'}}>
         {/* Title and subtitle */}
-        <h3 className="text-lg font-semibold text-[var(--accent-cyan)] mb-1">{project.title}</h3>
-        <p className="text-[var(--text-muted)] text-sm mb-2">{project.subtitle}</p>
+        <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '4px'}}>{project.title}</h3>
+        <p className="text-[var(--text-muted)] text-sm" style={{marginBottom: '8px'}}>{project.subtitle}</p>
         {project.course && (
-          <p className="text-xs font-mono text-[var(--accent-green)] mb-4">{project.course}</p>
+          <p className="text-xs font-mono text-[var(--accent-green)]" style={{marginBottom: '16px'}}>{project.course}</p>
         )}
 
         {/* Description */}
-        <p className="text-[var(--text-secondary)] text-sm mb-4 leading-relaxed">{project.description}</p>
+        <p className="text-[var(--text-secondary)] text-sm leading-relaxed" style={{marginBottom: '16px'}}>{project.description}</p>
 
         {/* CVSS Vulnerabilities (if present) */}
         {project.vulnerabilities && project.vulnerabilities.length > 0 && (
-          <div className="mb-4">
-            <h4 className="text-xs font-mono text-[var(--text-muted)] mb-2">// vulnerabilities_found</h4>
-            <div className="flex flex-wrap gap-2">
+          <div style={{marginBottom: '16px'}}>
+            <h4 className="text-xs font-mono text-[var(--text-muted)]" style={{marginBottom: '8px'}}>// vulnerabilities_found</h4>
+            <div className="flex flex-wrap" style={{gap: '8px'}}>
               {project.vulnerabilities.map((vuln, i) => (
                 <div
                   key={i}
-                  className={`text-xs px-2 py-1 rounded border flex items-center gap-2 ${getSeverityColor(vuln.severity)}`}
+                  className={`text-xs rounded border flex items-center ${getSeverityColor(vuln.severity)}`}
+                  style={{padding: '4px 8px', gap: '8px'}}
                 >
                   <span>{vuln.name}</span>
                   <span className={`font-mono font-bold ${getCVSSColor(vuln.cvss)}`}>
@@ -342,13 +343,14 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         )}
 
         {/* Tools */}
-        <div className="mb-4">
-          <h4 className="text-xs font-mono text-[var(--text-muted)] mb-2">// tools_used</h4>
-          <div className="flex flex-wrap gap-2">
+        <div style={{marginBottom: '16px'}}>
+          <h4 className="text-xs font-mono text-[var(--text-muted)]" style={{marginBottom: '8px'}}>// tools_used</h4>
+          <div className="flex flex-wrap" style={{gap: '8px'}}>
             {project.tools.map((tool, i) => (
               <span
                 key={i}
-                className="text-xs font-mono bg-[var(--bg-tertiary)] rounded text-[var(--accent-green)] px-2 py-1 border border-[var(--border-color)]"
+                className="text-xs font-mono bg-[var(--bg-tertiary)] rounded text-[var(--accent-green)] border border-[var(--border-color)]"
+                style={{padding: '4px 8px'}}
               >
                 {tool}
               </span>
@@ -359,20 +361,21 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         {/* Expandable Section */}
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="w-full text-left text-xs font-mono text-[var(--accent-cyan)] hover:text-[var(--accent-green)] transition-colors flex items-center gap-2 mb-2"
+          className="w-full text-left text-xs font-mono text-[var(--accent-cyan)] hover:text-[var(--accent-green)] transition-colors flex items-center"
+          style={{gap: '8px', marginBottom: '8px'}}
         >
           <span>{isExpanded ? '[-]' : '[+]'}</span>
           <span>{isExpanded ? 'Hide details' : 'Show methodology & findings'}</span>
         </button>
 
         {isExpanded && (
-          <div className="mt-4 pt-4 border-t border-[var(--border-color)] animate-[fadeIn_0.3s_ease-out]">
+          <div className="border-t border-[var(--border-color)] animate-[fadeIn_0.3s_ease-out]" style={{marginTop: '16px', paddingTop: '16px'}}>
             {/* Methodology */}
-            <div className="mb-4">
-              <h4 className="text-xs font-mono text-[var(--text-muted)] mb-2">// methodology</h4>
-              <ul className="text-sm text-[var(--text-secondary)] space-y-1">
+            <div style={{marginBottom: '16px'}}>
+              <h4 className="text-xs font-mono text-[var(--text-muted)]" style={{marginBottom: '8px'}}>// methodology</h4>
+              <ul className="text-sm text-[var(--text-secondary)]" style={{display: 'flex', flexDirection: 'column', gap: '4px'}}>
                 {project.methodology.map((step, i) => (
-                  <li key={i} className="flex items-start gap-2">
+                  <li key={i} className="flex items-start" style={{gap: '8px'}}>
                     <span className="text-[var(--accent-green)]">→</span>
                     <span>{step}</span>
                   </li>
@@ -382,11 +385,11 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
             {/* Findings */}
             {project.findings && project.findings.length > 0 && (
-              <div className="mb-4">
-                <h4 className="text-xs font-mono text-[var(--text-muted)] mb-2">// key_findings</h4>
-                <ul className="text-sm text-[var(--text-secondary)] space-y-1">
+              <div style={{marginBottom: '16px'}}>
+                <h4 className="text-xs font-mono text-[var(--text-muted)]" style={{marginBottom: '8px'}}>// key_findings</h4>
+                <ul className="text-sm text-[var(--text-secondary)]" style={{display: 'flex', flexDirection: 'column', gap: '4px'}}>
                   {project.findings.map((finding, i) => (
-                    <li key={i} className="flex items-start gap-2">
+                    <li key={i} className="flex items-start" style={{gap: '8px'}}>
                       <span className="text-[var(--accent-cyan)]">•</span>
                       <span>{finding}</span>
                     </li>
@@ -397,11 +400,11 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
             {/* Highlights */}
             {project.highlights && project.highlights.length > 0 && (
-              <div className="mb-4">
-                <h4 className="text-xs font-mono text-[var(--text-muted)] mb-2">// highlights</h4>
-                <ul className="text-sm text-[var(--text-secondary)] space-y-1">
+              <div style={{marginBottom: '16px'}}>
+                <h4 className="text-xs font-mono text-[var(--text-muted)]" style={{marginBottom: '8px'}}>// highlights</h4>
+                <ul className="text-sm text-[var(--text-secondary)]" style={{display: 'flex', flexDirection: 'column', gap: '4px'}}>
                   {project.highlights.map((highlight, i) => (
-                    <li key={i} className="flex items-start gap-2">
+                    <li key={i} className="flex items-start" style={{gap: '8px'}}>
                       <span className="text-yellow-400">★</span>
                       <span>{highlight}</span>
                     </li>
@@ -416,7 +419,8 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 href={project.reportLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs font-mono bg-[var(--accent-cyan)]/10 text-[var(--accent-cyan)] px-3 py-2 rounded border border-[var(--accent-cyan)]/30 hover:bg-[var(--accent-cyan)]/20 transition-colors"
+                className="inline-flex items-center text-xs font-mono bg-[var(--accent-cyan)]/10 text-[var(--accent-cyan)] rounded border border-[var(--accent-cyan)]/30 hover:bg-[var(--accent-cyan)]/20 transition-colors"
+                style={{gap: '8px', padding: '8px 12px'}}
               >
                 <span>📄</span>
                 <span>View Full Report (PDF)</span>
@@ -443,40 +447,40 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section id="projects" className="relative z-10 py-24 px-[5%]">
-      <div className="w-full flex flex-col items-center">
+    <section id="projects" className="relative z-10" style={{ padding: '96px 5%' }}>
+      <div className="w-full flex flex-col">
         {/* Section Header */}
         <ScrollAnimation>
-          <div className="text-center mb-16">
+          <div className="text-center" style={{marginBottom: '64px'}}>
             <span className="font-mono text-sm text-[var(--accent-green)]">// security_projects</span>
-            <h2 className="text-4xl font-bold text-[var(--text-primary)] mt-2">
+            <h2 className="text-4xl font-bold text-[var(--text-primary)]" style={{marginTop: '8px'}}>
               <GlitchText>Security Projects</GlitchText>
             </h2>
-            <div className="w-16 h-1 bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-green)] mx-auto mt-4 rounded"></div>
+            <div className="w-16 h-1 bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-green)] mx-auto rounded" style={{marginTop: '16px'}}></div>
           </div>
         </ScrollAnimation>
 
         {/* Stats Bar */}
         <ScrollAnimation delay={50}>
-          <div className="flex flex-wrap justify-center gap-8 mb-12">
+          <div className="flex flex-wrap justify-center" style={{gap: '32px', marginBottom: '48px'}}>
             <div className="text-center">
               <span className="text-3xl font-bold font-mono text-[var(--accent-cyan)]">{stats.total}</span>
-              <p className="text-xs text-[var(--text-muted)] mt-1">Projects</p>
+              <p className="text-xs text-[var(--text-muted)]" style={{marginTop: '4px'}}>Projects</p>
             </div>
             <div className="text-center">
               <span className="text-3xl font-bold font-mono text-[var(--accent-red)]">{stats.vulnerabilities}</span>
-              <p className="text-xs text-[var(--text-muted)] mt-1">Vulnerabilities Found</p>
+              <p className="text-xs text-[var(--text-muted)]" style={{marginTop: '4px'}}>Vulnerabilities Found</p>
             </div>
             <div className="text-center">
               <span className="text-3xl font-bold font-mono text-[var(--accent-green)]">{stats.tools}</span>
-              <p className="text-xs text-[var(--text-muted)] mt-1">Tools Used</p>
+              <p className="text-xs text-[var(--text-muted)]" style={{marginTop: '4px'}}>Tools Used</p>
             </div>
           </div>
         </ScrollAnimation>
 
         {/* Filter Buttons */}
         <ScrollAnimation delay={100}>
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <div className="flex flex-wrap justify-center" style={{gap: '12px', marginBottom: '48px'}}>
             {[
               { key: 'all', label: 'All Projects' },
               { key: 'solo', label: 'Solo Work' },
@@ -486,11 +490,12 @@ export default function ProjectsSection() {
               <button
                 key={key}
                 onClick={() => setFilter(key as typeof filter)}
-                className={`px-4 py-2 rounded font-mono text-sm border transition-all duration-300 ${
+                className={`rounded font-mono text-sm border transition-all duration-300 ${
                   filter === key
                     ? 'bg-[var(--accent-cyan)] text-[var(--bg-primary)] border-[var(--accent-cyan)]'
                     : 'bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border-[var(--border-color)] hover:border-[var(--accent-cyan)]'
                 }`}
+                style={{padding: '8px 16px'}}
               >
                 {label}
               </button>
@@ -500,7 +505,7 @@ export default function ProjectsSection() {
 
         {/* Projects Grid */}
         <ScrollAnimation delay={150}>
-          <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-6xl gap-8 px-4 md:px-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 w-full" style={{gap: '32px'}}>
             {filteredProjects.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} />
             ))}
@@ -509,44 +514,50 @@ export default function ProjectsSection() {
 
         {/* View All Reports CTA */}
         <ScrollAnimation delay={200}>
-          <div className="mt-16 text-center">
-            <p className="text-[var(--text-muted)] text-sm mb-4 font-mono">
+          <div className="text-center" style={{marginTop: '64px'}}>
+            <p className="text-[var(--text-muted)] text-sm font-mono" style={{marginBottom: '16px'}}>
               // All project reports available in PDF format
             </p>
-            <div className="flex flex-wrap justify-center gap-3">
+            <div className="flex flex-wrap justify-center" style={{gap: '12px'}}>
               <a
                 href="/reports/penetration-testing-deathnote.pdf"
-                className="text-xs font-mono px-3 py-2 bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded text-[var(--text-secondary)] hover:border-[var(--accent-cyan)] hover:text-[var(--accent-cyan)] transition-all"
+                className="text-xs font-mono bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded text-[var(--text-secondary)] hover:border-[var(--accent-cyan)] hover:text-[var(--accent-cyan)] transition-all"
+                style={{padding: '8px 12px'}}
               >
                 💀 Pentest Report
               </a>
               <a
                 href="/reports/buffer-overflow-exploitation.pdf"
-                className="text-xs font-mono px-3 py-2 bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded text-[var(--text-secondary)] hover:border-[var(--accent-cyan)] hover:text-[var(--accent-cyan)] transition-all"
+                className="text-xs font-mono bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded text-[var(--text-secondary)] hover:border-[var(--accent-cyan)] hover:text-[var(--accent-cyan)] transition-all"
+                style={{padding: '8px 12px'}}
               >
                 🧨 Buffer Overflow
               </a>
               <a
                 href="/reports/web-security-labs.pdf"
-                className="text-xs font-mono px-3 py-2 bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded text-[var(--text-secondary)] hover:border-[var(--accent-cyan)] hover:text-[var(--accent-cyan)] transition-all"
+                className="text-xs font-mono bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded text-[var(--text-secondary)] hover:border-[var(--accent-cyan)] hover:text-[var(--accent-cyan)] transition-all"
+                style={{padding: '8px 12px'}}
               >
                 🌐 Web Security
               </a>
               <a
                 href="/reports/network-security-design.pdf"
-                className="text-xs font-mono px-3 py-2 bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded text-[var(--text-secondary)] hover:border-[var(--accent-cyan)] hover:text-[var(--accent-cyan)] transition-all"
+                className="text-xs font-mono bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded text-[var(--text-secondary)] hover:border-[var(--accent-cyan)] hover:text-[var(--accent-cyan)] transition-all"
+                style={{padding: '8px 12px'}}
               >
                 🏢 Network Design
               </a>
               <a
                 href="/reports/vulnerability-assessment-skillsbridge.pdf"
-                className="text-xs font-mono px-3 py-2 bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded text-[var(--text-secondary)] hover:border-[var(--accent-cyan)] hover:text-[var(--accent-cyan)] transition-all"
+                className="text-xs font-mono bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded text-[var(--text-secondary)] hover:border-[var(--accent-cyan)] hover:text-[var(--accent-cyan)] transition-all"
+                style={{padding: '8px 12px'}}
               >
                 🔍 Vuln Assessment
               </a>
               <a
                 href="/reports/risk-analysis-skillsbridge.pdf"
-                className="text-xs font-mono px-3 py-2 bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded text-[var(--text-secondary)] hover:border-[var(--accent-cyan)] hover:text-[var(--accent-cyan)] transition-all"
+                className="text-xs font-mono bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded text-[var(--text-secondary)] hover:border-[var(--accent-cyan)] hover:text-[var(--accent-cyan)] transition-all"
+                style={{padding: '8px 12px'}}
               >
                 📊 Risk Analysis
               </a>

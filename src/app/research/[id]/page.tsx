@@ -226,7 +226,7 @@ export default function ResearchGalleryPage() {
       </nav>
 
       {/* Content */}
-      <section className="relative z-10 px-[5%]" style={{ paddingTop: '100px', paddingBottom: '48px' }}>
+      <section className="relative z-10" style={{ padding: '100px 5% 48px 5%' }}>
         <div className="w-full flex flex-col items-center">
 
           {/* Title */}

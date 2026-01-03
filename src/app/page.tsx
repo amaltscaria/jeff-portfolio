@@ -50,7 +50,7 @@ export default function Home() {
       <ScanLine />
 
       {/* Hero Section */}
-      <section className="relative z-10 min-h-screen flex items-center justify-center px-[5%] flex-col lg:flex-row" style={{gap: '64px', paddingTop: '100px', paddingBottom: '80px'}}>
+      <section className="relative z-10 min-h-screen flex items-center justify-center flex-col lg:flex-row" style={{gap: '64px', padding: '100px 5% 80px 5%'}}>
 
         {/* Terminal Window */}
         <div className="w-full max-w-[600px] bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5),var(--glow-cyan)]">
@@ -95,7 +95,7 @@ export default function Home() {
       <CyberDivider />
 
       {/* About Section */}
-      <section id="about" className="relative z-10 py-24 px-[5%] bg-[var(--bg-secondary)]/50">
+      <section id="about" className="relative z-10 bg-[var(--bg-secondary)]/50" style={{padding: '96px 5%'}}>
         <div className="w-full flex flex-col items-center">
           {/* Section Header */}
           <ScrollAnimation>
@@ -162,8 +162,8 @@ export default function Home() {
       <CyberDivider delay={100} />
 
       {/* Skills Section */}
-      <section id="skills" className="relative z-10 py-24 px-[5%]">
-        <div className="w-full flex flex-col items-center">
+      <section id="skills" className="relative z-10" style={{padding: '96px 5%'}}>
+        <div className="w-full flex flex-col">
           {/* Section Header */}
           <ScrollAnimation>
             <div className="text-center" style={{marginBottom: '64px'}}>
@@ -175,7 +175,7 @@ export default function Home() {
 
           {/* Skills Grid */}
           <ScrollAnimation delay={100}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full max-w-6xl" style={{gap: '32px'}}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full" style={{gap: '32px'}}>
 
             {/* Networking */}
             <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300" style={{padding: '24px'}}>
@@ -233,7 +233,7 @@ export default function Home() {
 
           {/* Skill Progress Bars */}
           <ScrollAnimation delay={150}>
-            <div className="w-full max-w-4xl" style={{marginTop: '64px'}}>
+            <div className="w-full" style={{marginTop: '64px'}}>
               <h3 className="text-center font-mono text-[var(--text-secondary)]" style={{marginBottom: '32px'}}>// proficiency_levels</h3>
               <div className="grid grid-cols-1 md:grid-cols-2" style={{gap: '24px 48px'}}>
                 <div>
@@ -254,7 +254,7 @@ export default function Home() {
 
           {/* Tools Bar */}
           <ScrollAnimation delay={200}>
-            <div className="w-full max-w-4xl" style={{marginTop: '64px'}}>
+            <div className="w-full" style={{marginTop: '64px'}}>
               <h3 className="text-center font-mono text-[var(--text-secondary)]" style={{marginBottom: '24px'}}>// tools_i_use</h3>
               <div className="flex flex-wrap justify-center" style={{gap: '12px'}}>
                 {['Nmap', 'Burp Suite', 'Wireshark', 'Metasploit', 'Nikto', 'Nessus', 'AWS', 'Cisco Packet Tracer', 'GNS3', 'Kali Linux', 'Docker', 'Git'].map((tool) => (
@@ -288,8 +288,8 @@ export default function Home() {
       <CyberDivider delay={100} />
 
       {/* Certifications Section */}
-      <section id="certifications" className="relative z-10 py-24 px-[5%] bg-[var(--bg-secondary)]/50">
-        <div className="w-full flex flex-col items-center">
+      <section id="certifications" className="relative z-10 bg-[var(--bg-secondary)]/50" style={{padding: '96px 5%'}}>
+        <div className="w-full flex flex-col">
           {/* Section Header */}
           <ScrollAnimation>
             <div className="text-center" style={{marginBottom: '64px'}}>
@@ -368,7 +368,7 @@ export default function Home() {
       <CyberDivider delay={100} />
 
       {/* Experience & Education Section */}
-      <section id="experience" className="relative z-10 py-24 px-[5%] bg-[var(--bg-secondary)]/50">
+      <section id="experience" className="relative z-10 bg-[var(--bg-secondary)]/50" style={{padding: '96px 5%'}}>
         <div className="w-full flex flex-col items-center">
           {/* Section Header */}
           <ScrollAnimation>
@@ -440,7 +440,7 @@ export default function Home() {
       <CyberDivider delay={100} />
 
       {/* Contact Section */}
-      <section id="contact" className="relative z-10 py-24 px-[5%]">
+      <section id="contact" className="relative z-10" style={{padding: '96px 5%'}}>
         <div className="w-full flex flex-col items-center">
           {/* Section Header */}
           <ScrollAnimation>
