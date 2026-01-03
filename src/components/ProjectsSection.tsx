@@ -448,7 +448,7 @@ export default function ProjectsSection() {
 
   return (
     <section id="projects" className="relative z-10" style={{ padding: '96px 5%' }}>
-      <div className="w-full flex flex-col">
+      <div className="w-full flex flex-col items-center">
         {/* Section Header */}
         <ScrollAnimation>
           <div className="text-center" style={{marginBottom: '64px'}}>
@@ -504,7 +504,7 @@ export default function ProjectsSection() {
         </ScrollAnimation>
 
         {/* Projects Grid */}
-        <ScrollAnimation delay={150}>
+        <ScrollAnimation delay={150} className="w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 w-full" style={{gap: '32px'}}>
             {filteredProjects.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} />

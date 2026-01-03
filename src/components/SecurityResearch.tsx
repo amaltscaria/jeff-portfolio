@@ -165,7 +165,7 @@ export default function SecurityResearch() {
 
   return (
       <section id="research" className="relative z-10" style={{ padding: '96px 5%' }}>
-        <div className="w-full flex flex-col">
+        <div className="w-full flex flex-col items-center">
           {/* Section Header */}
           <div className="text-center" style={{ marginBottom: '64px' }}>
             <p className="font-mono text-[var(--accent-cyan)]" style={{ marginBottom: '8px' }}>

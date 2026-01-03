@@ -108,7 +108,7 @@ export default function Home() {
 
           {/* About Text - Centered */}
           <ScrollAnimation delay={100}>
-            <div className="text-center max-w-3xl" style={{marginBottom: '80px'}}>
+            <div className="text-center max-w-3xl mx-auto" style={{marginBottom: '80px'}}>
               <h3 className="text-2xl font-mono text-[var(--accent-cyan)]" style={{marginBottom: '24px'}}>&gt; ./about.sh</h3>
               <p className="text-[var(--text-secondary)] leading-relaxed" style={{marginBottom: '16px'}}>
                 I&apos;m a <span className="text-[var(--accent-cyan)] font-semibold">Cybersecurity Professional</span> and
@@ -130,7 +130,7 @@ export default function Home() {
 
           {/* Stats Grid - Centered */}
           <ScrollAnimation delay={200}>
-            <div className="grid grid-cols-2 md:grid-cols-4 w-full max-w-4xl" style={{marginTop: '40px', gap: '24px'}}>
+            <div className="grid grid-cols-2 md:grid-cols-4 w-full max-w-4xl mx-auto" style={{marginTop: '40px', gap: '24px'}}>
               <div className="card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg text-center hover:border-[var(--accent-cyan)] transition-all duration-300 hover:-translate-y-1" style={{padding: '24px'}}>
                 <span className="text-4xl font-bold font-mono text-[var(--accent-cyan)] block">
                   <AnimatedCounter end={5} suffix="+" duration={1500} />
@@ -163,7 +163,7 @@ export default function Home() {
 
       {/* Skills Section */}
       <section id="skills" className="relative z-10" style={{padding: '96px 5%'}}>
-        <div className="w-full flex flex-col">
+        <div className="w-full flex flex-col items-center">
           {/* Section Header */}
           <ScrollAnimation>
             <div className="text-center" style={{marginBottom: '64px'}}>
@@ -174,7 +174,7 @@ export default function Home() {
           </ScrollAnimation>
 
           {/* Skills Grid */}
-          <ScrollAnimation delay={100}>
+          <ScrollAnimation delay={100} className="w-full">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full" style={{gap: '32px'}}>
 
             {/* Networking */}
@@ -232,7 +232,7 @@ export default function Home() {
           </ScrollAnimation>
 
           {/* Skill Progress Bars */}
-          <ScrollAnimation delay={150}>
+          <ScrollAnimation delay={150} className="w-full">
             <div className="w-full" style={{marginTop: '64px'}}>
               <h3 className="text-center font-mono text-[var(--text-secondary)]" style={{marginBottom: '32px'}}>// proficiency_levels</h3>
               <div className="grid grid-cols-1 md:grid-cols-2" style={{gap: '24px 48px'}}>
@@ -253,7 +253,7 @@ export default function Home() {
           </ScrollAnimation>
 
           {/* Tools Bar */}
-          <ScrollAnimation delay={200}>
+          <ScrollAnimation delay={200} className="w-full">
             <div className="w-full" style={{marginTop: '64px'}}>
               <h3 className="text-center font-mono text-[var(--text-secondary)]" style={{marginBottom: '24px'}}>// tools_i_use</h3>
               <div className="flex flex-wrap justify-center" style={{gap: '12px'}}>
@@ -289,7 +289,7 @@ export default function Home() {
 
       {/* Certifications Section */}
       <section id="certifications" className="relative z-10 bg-[var(--bg-secondary)]/50" style={{padding: '96px 5%'}}>
-        <div className="w-full flex flex-col">
+        <div className="w-full flex flex-col items-center">
           {/* Section Header */}
           <ScrollAnimation>
             <div className="text-center" style={{marginBottom: '64px'}}>
@@ -300,8 +300,8 @@ export default function Home() {
           </ScrollAnimation>
 
           {/* Certs Grid */}
-          <ScrollAnimation delay={100}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full max-w-5xl" style={{gap: '24px'}}>
+          <ScrollAnimation delay={100} className="w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full" style={{gap: '24px'}}>
 
             {/* CCNP */}
             <TiltCard className="card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px'}}>
@@ -381,7 +381,7 @@ export default function Home() {
 
           {/* Timeline */}
           <ScrollAnimation delay={100}>
-            <div className="w-full max-w-4xl relative">
+            <div className="w-full max-w-4xl mx-auto relative">
             {/* Timeline Line */}
             <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-[2px] bg-[var(--border-color)]" style={{transform: 'translateX(-50%)'}}></div>
 
@@ -453,7 +453,7 @@ export default function Home() {
 
           {/* Contact Content */}
           <ScrollAnimation delay={100}>
-            <div className="w-full max-w-4xl">
+            <div className="w-full max-w-4xl mx-auto">
             <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg" style={{padding: '48px'}}>
 
               {/* Terminal Style Header */}
