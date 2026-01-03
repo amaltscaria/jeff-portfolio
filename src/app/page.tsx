@@ -11,16 +11,25 @@ import LoadingScreen from "@/components/LoadingScreen";
 import SectionTransition, { CyberDivider } from "@/components/SectionTransition";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import KonamiEasterEgg from "@/components/KonamiEasterEgg";
+import ParticleNetwork from "@/components/ParticleNetwork";
+import GlitchText from "@/components/GlitchText";
+import MagneticButton from "@/components/MagneticButton";
+import ScrollProgress from "@/components/ScrollProgress";
+import AnimatedCounter from "@/components/AnimatedCounter";
+import CommandPalette from "@/components/CommandPalette";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-[var(--bg-primary)]">
       <LoadingScreen />
+      <ScrollProgress />
       <CustomCursor />
       <MatrixRain />
+      <ParticleNetwork />
       <Navbar />
       <ThemeSwitcher />
       <KonamiEasterEgg />
+      <CommandPalette />
 
       {/* Hero Section */}
       <section className="relative z-10 min-h-screen flex items-center justify-center px-[5%] flex-col lg:flex-row" style={{gap: '64px', paddingTop: '100px', paddingBottom: '80px'}}>
@@ -74,7 +83,7 @@ export default function Home() {
           <ScrollAnimation>
             <div className="text-center" style={{marginBottom: '64px'}}>
               <span className="font-mono text-sm text-[var(--accent-green)]">// about_me</span>
-              <h2 className="text-4xl font-bold text-[var(--text-primary)]" style={{marginTop: '8px'}}>Who Am I?</h2>
+              <h2 className="text-4xl font-bold text-[var(--text-primary)]" style={{marginTop: '8px'}}><GlitchText>Who Am I?</GlitchText></h2>
               <div className="w-16 h-1 bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-green)] mx-auto rounded" style={{marginTop: '16px'}}></div>
             </div>
           </ScrollAnimation>
@@ -105,15 +114,21 @@ export default function Home() {
           <ScrollAnimation delay={200}>
             <div className="grid grid-cols-2 md:grid-cols-4 w-full max-w-4xl" style={{marginTop: '40px', gap: '24px'}}>
               <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg text-center hover:border-[var(--accent-cyan)] transition-all duration-300 hover:-translate-y-1" style={{padding: '24px'}}>
-                <span className="text-4xl font-bold font-mono text-[var(--accent-cyan)] block">5+</span>
+                <span className="text-4xl font-bold font-mono text-[var(--accent-cyan)] block">
+                  <AnimatedCounter end={5} suffix="+" duration={1500} />
+                </span>
                 <span className="text-[var(--text-secondary)] text-sm block" style={{marginTop: '8px'}}>Certifications</span>
               </div>
               <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg text-center hover:border-[var(--accent-cyan)] transition-all duration-300 hover:-translate-y-1" style={{padding: '24px'}}>
-                <span className="text-4xl font-bold font-mono text-[var(--accent-cyan)] block">2+</span>
+                <span className="text-4xl font-bold font-mono text-[var(--accent-cyan)] block">
+                  <AnimatedCounter end={2} suffix="+" duration={1500} />
+                </span>
                 <span className="text-[var(--text-secondary)] text-sm block" style={{marginTop: '8px'}}>Years Experience</span>
               </div>
               <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg text-center hover:border-[var(--accent-cyan)] transition-all duration-300 hover:-translate-y-1" style={{padding: '24px'}}>
-                <span className="text-4xl font-bold font-mono text-[var(--accent-cyan)] block">10+</span>
+                <span className="text-4xl font-bold font-mono text-[var(--accent-cyan)] block">
+                  <AnimatedCounter end={10} suffix="+" duration={1500} />
+                </span>
                 <span className="text-[var(--text-secondary)] text-sm block" style={{marginTop: '8px'}}>Security Projects</span>
               </div>
               <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg text-center hover:border-[var(--accent-cyan)] transition-all duration-300 hover:-translate-y-1" style={{padding: '24px'}}>
@@ -135,7 +150,7 @@ export default function Home() {
           <ScrollAnimation>
             <div className="text-center" style={{marginBottom: '64px'}}>
               <span className="font-mono text-sm text-[var(--accent-green)]">// skills</span>
-              <h2 className="text-4xl font-bold text-[var(--text-primary)]" style={{marginTop: '8px'}}>Tech Arsenal</h2>
+              <h2 className="text-4xl font-bold text-[var(--text-primary)]" style={{marginTop: '8px'}}><GlitchText>Tech Arsenal</GlitchText></h2>
               <div className="w-16 h-1 bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-green)] mx-auto rounded" style={{marginTop: '16px'}}></div>
             </div>
           </ScrollAnimation>
@@ -245,7 +260,7 @@ export default function Home() {
           <ScrollAnimation>
             <div className="text-center" style={{marginBottom: '64px'}}>
               <span className="font-mono text-sm text-[var(--accent-green)]">// certifications</span>
-              <h2 className="text-4xl font-bold text-[var(--text-primary)]" style={{marginTop: '8px'}}>Credentials</h2>
+              <h2 className="text-4xl font-bold text-[var(--text-primary)]" style={{marginTop: '8px'}}><GlitchText>Credentials</GlitchText></h2>
               <div className="w-16 h-1 bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-green)] mx-auto rounded" style={{marginTop: '16px'}}></div>
             </div>
           </ScrollAnimation>
@@ -317,7 +332,7 @@ export default function Home() {
           <ScrollAnimation>
             <div className="text-center" style={{marginBottom: '64px'}}>
               <span className="font-mono text-sm text-[var(--accent-green)]">// projects</span>
-              <h2 className="text-4xl font-bold text-[var(--text-primary)]" style={{marginTop: '8px'}}>Security Projects</h2>
+              <h2 className="text-4xl font-bold text-[var(--text-primary)]" style={{marginTop: '8px'}}><GlitchText>Security Projects</GlitchText></h2>
               <div className="w-16 h-1 bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-green)] mx-auto mt-4 rounded"></div>
             </div>
           </ScrollAnimation>
@@ -383,7 +398,7 @@ export default function Home() {
           <ScrollAnimation>
             <div className="text-center" style={{marginBottom: '64px'}}>
               <span className="font-mono text-sm text-[var(--accent-green)]">// experience</span>
-              <h2 className="text-4xl font-bold text-[var(--text-primary)]" style={{marginTop: '8px'}}>Journey</h2>
+              <h2 className="text-4xl font-bold text-[var(--text-primary)]" style={{marginTop: '8px'}}><GlitchText>Journey</GlitchText></h2>
               <div className="w-16 h-1 bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-green)] mx-auto rounded" style={{marginTop: '16px'}}></div>
             </div>
           </ScrollAnimation>
@@ -455,7 +470,7 @@ export default function Home() {
           <ScrollAnimation>
             <div className="text-center" style={{marginBottom: '64px'}}>
               <span className="font-mono text-sm text-[var(--accent-green)]">// contact</span>
-              <h2 className="text-4xl font-bold text-[var(--text-primary)]" style={{marginTop: '8px'}}>Get In Touch</h2>
+              <h2 className="text-4xl font-bold text-[var(--text-primary)]" style={{marginTop: '8px'}}><GlitchText>Get In Touch</GlitchText></h2>
               <div className="w-16 h-1 bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-green)] mx-auto rounded" style={{marginTop: '16px'}}></div>
             </div>
           </ScrollAnimation>
@@ -481,31 +496,48 @@ export default function Home() {
               <div className="flex flex-wrap justify-center" style={{gap: '24px'}}>
 
                 {/* Email */}
-                <a href="mailto:jeffint69@gmail.com" className="flex items-center bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300" style={{padding: '16px 24px', gap: '12px'}}>
+                <MagneticButton
+                  href="mailto:jeffint69@gmail.com"
+                  className="flex items-center bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300"
+                  style={{padding: '16px 24px', gap: '12px'}}
+                  strength={0.3}
+                >
                   <span className="text-2xl">📧</span>
                   <div>
                     <p className="text-[var(--text-muted)] text-xs font-mono">Email</p>
                     <p className="text-[var(--accent-cyan)]">jeffint69@gmail.com</p>
                   </div>
-                </a>
+                </MagneticButton>
 
                 {/* Phone */}
-                <a href="tel:+61432009364" className="flex items-center bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300" style={{padding: '16px 24px', gap: '12px'}}>
+                <MagneticButton
+                  href="tel:+61432009364"
+                  className="flex items-center bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300"
+                  style={{padding: '16px 24px', gap: '12px'}}
+                  strength={0.3}
+                >
                   <span className="text-2xl">📱</span>
                   <div>
                     <p className="text-[var(--text-muted)] text-xs font-mono">Phone</p>
                     <p className="text-[var(--accent-cyan)]">+61 432 009 364</p>
                   </div>
-                </a>
+                </MagneticButton>
 
                 {/* LinkedIn */}
-                <a href="https://www.linkedin.com/in/jeffin-thomas-69a2a0348/" target="_blank" rel="noopener noreferrer" className="flex items-center bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300" style={{padding: '16px 24px', gap: '12px'}}>
+                <MagneticButton
+                  href="https://www.linkedin.com/in/jeffin-thomas-69a2a0348/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300"
+                  style={{padding: '16px 24px', gap: '12px'}}
+                  strength={0.3}
+                >
                   <span className="text-2xl">💼</span>
                   <div>
                     <p className="text-[var(--text-muted)] text-xs font-mono">LinkedIn</p>
                     <p className="text-[var(--accent-cyan)]">Connect on LinkedIn</p>
                   </div>
-                </a>
+                </MagneticButton>
 
                 {/* Location */}
                 <div className="flex items-center bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded-lg" style={{padding: '16px 24px', gap: '12px'}}>
@@ -520,10 +552,16 @@ export default function Home() {
 
               {/* Download Resume Button */}
               <div className="text-center" style={{marginTop: '40px'}}>
-                <a href="/Jeffin_Thomas_Resume.pdf" download className="inline-flex items-center font-mono text-sm bg-[var(--accent-green)] text-[var(--bg-primary)] rounded hover:bg-[var(--accent-cyan)] transition-colors" style={{padding: '12px 24px', gap: '8px'}}>
+                <MagneticButton
+                  href="/Jeffin_Thomas_Resume.pdf"
+                  download
+                  className="inline-flex items-center font-mono text-sm bg-[var(--accent-green)] text-[var(--bg-primary)] rounded hover:bg-[var(--accent-cyan)] transition-colors"
+                  style={{padding: '12px 24px', gap: '8px'}}
+                  strength={0.4}
+                >
                   <span>📄</span>
                   <span>Download Resume</span>
-                </a>
+                </MagneticButton>
               </div>
 
               {/* Terminal Style Footer */}
