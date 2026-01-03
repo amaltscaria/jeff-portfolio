@@ -17,6 +17,8 @@ import MagneticButton from "@/components/MagneticButton";
 import ScrollProgress from "@/components/ScrollProgress";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import CommandPalette from "@/components/CommandPalette";
+import CursorTrail from "@/components/CursorTrail";
+import ClickRipple from "@/components/ClickRipple";
 
 export default function Home() {
   return (
@@ -30,6 +32,8 @@ export default function Home() {
       <ThemeSwitcher />
       <KonamiEasterEgg />
       <CommandPalette />
+      <CursorTrail />
+      <ClickRipple />
 
       {/* Hero Section */}
       <section className="relative z-10 min-h-screen flex items-center justify-center px-[5%] flex-col lg:flex-row" style={{gap: '64px', paddingTop: '100px', paddingBottom: '80px'}}>
@@ -342,7 +346,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-5xl" style={{gap: '32px'}}>
 
             {/* Project 1 - Senior Lifelong Learning Platform */}
-            <TiltCard className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg overflow-hidden hover:border-[var(--accent-cyan)] transition-colors duration-300">
+            <TiltCard className="card-glow bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg overflow-hidden hover:border-[var(--accent-cyan)] transition-colors duration-300">
               <div className="h-32 bg-gradient-to-br from-[var(--bg-tertiary)] to-[var(--bg-secondary)] flex items-center justify-center">
                 <span className="text-5xl">🌐</span>
               </div>
@@ -363,7 +367,7 @@ export default function Home() {
             </TiltCard>
 
             {/* Project 2 - Indoor Positioning System */}
-            <TiltCard className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg overflow-hidden hover:border-[var(--accent-cyan)] transition-colors duration-300">
+            <TiltCard className="card-glow bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg overflow-hidden hover:border-[var(--accent-cyan)] transition-colors duration-300">
               <div className="h-32 bg-gradient-to-br from-[var(--bg-tertiary)] to-[var(--bg-secondary)] flex items-center justify-center">
                 <span className="text-5xl">📍</span>
               </div>

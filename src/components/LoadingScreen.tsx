@@ -20,6 +20,8 @@ export default function LoadingScreen() {
 
   useEffect(() => {
     setIsMounted(true);
+    // Scroll to top on page load/refresh
+    window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
@@ -154,11 +156,37 @@ export default function LoadingScreen() {
         {progress}%
       </div>
 
+      {/* Skip Button */}
+      <button
+        onClick={() => {
+          setIsComplete(true);
+          setTimeout(() => setIsHidden(true), 500);
+        }}
+        className="absolute bottom-8 font-mono text-xs transition-all duration-300 hover:scale-105"
+        style={{
+          color: 'var(--text-muted)',
+          padding: '8px 16px',
+          border: '1px solid var(--border-color)',
+          borderRadius: '4px',
+          backgroundColor: 'transparent',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.borderColor = 'var(--accent-cyan)';
+          e.currentTarget.style.color = 'var(--accent-cyan)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.borderColor = 'var(--border-color)';
+          e.currentTarget.style.color = 'var(--text-muted)';
+        }}
+      >
+        [SKIP] Press to bypass
+      </button>
+
       {/* Decorative corners */}
       <div className="absolute top-8 left-8 w-16 h-16 border-l-2 border-t-2" style={{ borderColor: 'var(--accent-cyan)', opacity: 0.5 }} />
       <div className="absolute top-8 right-8 w-16 h-16 border-r-2 border-t-2" style={{ borderColor: 'var(--accent-cyan)', opacity: 0.5 }} />
-      <div className="absolute bottom-8 left-8 w-16 h-16 border-l-2 border-b-2" style={{ borderColor: 'var(--accent-cyan)', opacity: 0.5 }} />
-      <div className="absolute bottom-8 right-8 w-16 h-16 border-r-2 border-b-2" style={{ borderColor: 'var(--accent-cyan)', opacity: 0.5 }} />
+      <div className="absolute bottom-24 left-8 w-16 h-16 border-l-2 border-b-2" style={{ borderColor: 'var(--accent-cyan)', opacity: 0.5 }} />
+      <div className="absolute bottom-24 right-8 w-16 h-16 border-r-2 border-b-2" style={{ borderColor: 'var(--accent-cyan)', opacity: 0.5 }} />
 
       {/* Binary rain decoration - only render on client to avoid hydration mismatch */}
       {isMounted && (

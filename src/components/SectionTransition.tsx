@@ -138,7 +138,7 @@ export function CyberDivider({ delay = 0 }: { delay?: number }) {
   }, [delay]);
 
   return (
-    <div ref={ref} className="relative py-16 flex items-center justify-center overflow-hidden">
+    <div ref={ref} className="relative flex items-center justify-center overflow-hidden" style={{ padding: '48px 0' }}>
       {/* Left line */}
       <div
         className="h-px flex-1"
