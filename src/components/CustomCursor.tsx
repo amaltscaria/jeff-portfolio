@@ -7,8 +7,16 @@ export default function CustomCursor() {
   const [isHovering, setIsHovering] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    // Check for touch device
+    if ('ontouchstart' in window) {
+      return;
+    }
+
+    setIsMounted(true);
+
     const updatePosition = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
       setIsVisible(true);
@@ -52,8 +60,8 @@ export default function CustomCursor() {
     };
   }, []);
 
-  // Don't render on touch devices
-  if (typeof window !== 'undefined' && 'ontouchstart' in window) {
+  // Don't render on server or touch devices
+  if (!isMounted) {
     return null;
   }
 

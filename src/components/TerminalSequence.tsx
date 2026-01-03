@@ -26,6 +26,14 @@ const getTerminalLines = (): TerminalLine[] => [
   { command: './display_name.sh', output: '', commandDelay: 100 },
 ];
 
+const roles = [
+  'Penetration Tester',
+  'Network Security Engineer',
+  'Vulnerability Researcher',
+  'Cloud Security Specialist',
+  'Ethical Hacker',
+];
+
 export default function TerminalSequence() {
   const [visibleLines, setVisibleLines] = useState(0);
   const [typingStage, setTypingStage] = useState<'command' | 'output'>('command');
@@ -33,6 +41,9 @@ export default function TerminalSequence() {
   const [showCursor, setShowCursor] = useState(true);
   const [showName, setShowName] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const [roleText, setRoleText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
 
   // Memoize terminal lines to prevent re-creation on every render
   const terminalLines = useMemo(() => getTerminalLines(), []);
@@ -44,6 +55,35 @@ export default function TerminalSequence() {
     }, 530);
     return () => clearInterval(interval);
   }, []);
+
+  // Rotating roles typewriter effect
+  useEffect(() => {
+    if (!showName) return;
+
+    const currentRole = roles[currentRoleIndex];
+
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        // Typing
+        if (roleText.length < currentRole.length) {
+          setRoleText(currentRole.slice(0, roleText.length + 1));
+        } else {
+          // Pause before deleting
+          setTimeout(() => setIsDeleting(true), 2000);
+        }
+      } else {
+        // Deleting
+        if (roleText.length > 0) {
+          setRoleText(roleText.slice(0, -1));
+        } else {
+          setIsDeleting(false);
+          setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+        }
+      }
+    }, isDeleting ? 50 : 100);
+
+    return () => clearTimeout(timeout);
+  }, [showName, roleText, isDeleting, currentRoleIndex]);
 
   // Typing animation
   useEffect(() => {
@@ -124,22 +164,36 @@ export default function TerminalSequence() {
 
       {/* Glitch Name - shows after last command */}
       {showName && (
-        <div className="relative inline-block text-4xl font-bold text-[var(--accent-cyan)] my-4 [text-shadow:var(--glow-cyan)] animate-[fadeIn_0.5s_ease-out]">
-          <span className="relative">
-            JEFFIN THOMAS
-            <span
-              className="absolute top-0 left-0 w-full h-full text-[var(--accent-red)] animate-[glitch-1_2s_infinite_linear_alternate-reverse] [clip-path:polygon(0_0,100%_0,100%_45%,0_45%)]"
-              style={{left: '2px'}}
-            >
+        <div className="animate-[fadeIn_0.5s_ease-out]">
+          <div className="relative inline-block text-4xl font-bold text-[var(--accent-cyan)] my-4 [text-shadow:var(--glow-cyan)]">
+            <span className="relative">
               JEFFIN THOMAS
+              <span
+                className="absolute top-0 left-0 w-full h-full text-[var(--accent-red)] animate-[glitch-1_2s_infinite_linear_alternate-reverse] [clip-path:polygon(0_0,100%_0,100%_45%,0_45%)]"
+                style={{left: '2px'}}
+              >
+                JEFFIN THOMAS
+              </span>
+              <span
+                className="absolute top-0 left-0 w-full h-full text-[var(--accent-green)] animate-[glitch-2_3s_infinite_linear_alternate-reverse] [clip-path:polygon(0_55%,100%_55%,100%_100%,0_100%)]"
+                style={{left: '-2px'}}
+              >
+                JEFFIN THOMAS
+              </span>
             </span>
+          </div>
+          {/* Rotating Role */}
+          <div className="text-lg font-mono text-[var(--text-secondary)] mt-2">
+            <span className="text-[var(--accent-green)]">&gt; </span>
+            <span className="text-[var(--accent-cyan)]">{roleText}</span>
             <span
-              className="absolute top-0 left-0 w-full h-full text-[var(--accent-green)] animate-[glitch-2_3s_infinite_linear_alternate-reverse] [clip-path:polygon(0_55%,100%_55%,100%_100%,0_100%)]"
-              style={{left: '-2px'}}
-            >
-              JEFFIN THOMAS
-            </span>
-          </span>
+              className="inline-block w-2 h-5 ml-1 bg-[var(--accent-cyan)]"
+              style={{
+                opacity: showCursor ? 1 : 0,
+                verticalAlign: 'middle'
+              }}
+            />
+          </div>
         </div>
       )}
 

@@ -25,11 +25,14 @@ import Parallax3DImage from "@/components/Parallax3DImage";
 import CyberGrid from "@/components/CyberGrid";
 import ScanLine from "@/components/ScanLine";
 import SecurityResearch from "@/components/SecurityResearch";
+import LiveTerminalDemo from "@/components/LiveTerminalDemo";
+import ConsoleEasterEgg from "@/components/ConsoleEasterEgg";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-[var(--bg-primary)]">
       <LoadingScreen />
+      <ConsoleEasterEgg />
       <ScrollProgress />
       <CustomCursor />
       <MatrixRain />
@@ -270,6 +273,14 @@ export default function Home() {
       {/* Security Research Section */}
       <ScrollAnimation>
         <SecurityResearch />
+      </ScrollAnimation>
+
+      {/* Divider */}
+      <CyberDivider delay={100} />
+
+      {/* Live Terminal Demo Section */}
+      <ScrollAnimation>
+        <LiveTerminalDemo />
       </ScrollAnimation>
 
       {/* Divider */}
@@ -601,6 +612,9 @@ export default function Home() {
             <p>&copy; 2026 Jeffin Thomas</p>
             <p style={{marginTop: '8px'}}>
               <span className="text-[var(--accent-green)]">&lt;/&gt;</span> with <span className="text-[var(--accent-red)]">❤</span> in Melbourne
+            </p>
+            <p className="text-xs opacity-50 hover:opacity-100 transition-opacity cursor-default" style={{marginTop: '16px'}}>
+              // secret: ↑↑↓↓←→←→BA
             </p>
           </div>
 
