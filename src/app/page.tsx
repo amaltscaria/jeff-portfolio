@@ -27,6 +27,7 @@ import ScanLine from "@/components/ScanLine";
 import SecurityResearch from "@/components/SecurityResearch";
 import LiveTerminalDemo from "@/components/LiveTerminalDemo";
 import ConsoleEasterEgg from "@/components/ConsoleEasterEgg";
+import ProjectsSection from "@/components/ProjectsSection";
 
 export default function Home() {
   return (
@@ -359,67 +360,9 @@ export default function Home() {
       <CyberDivider delay={100} />
 
       {/* Projects Section */}
-      <section id="projects" className="relative z-10 py-24 px-[5%]">
-        <div className="w-full flex flex-col items-center">
-          {/* Section Header */}
-          <ScrollAnimation>
-            <div className="text-center" style={{marginBottom: '64px'}}>
-              <span className="font-mono text-sm text-[var(--accent-green)]">// projects</span>
-              <h2 className="text-4xl font-bold text-[var(--text-primary)]" style={{marginTop: '8px'}}><GlitchText>Security Projects</GlitchText></h2>
-              <div className="w-16 h-1 bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-green)] mx-auto mt-4 rounded"></div>
-            </div>
-          </ScrollAnimation>
-
-          {/* Projects Grid */}
-          <ScrollAnimation delay={100}>
-            <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-5xl" style={{gap: '32px'}}>
-
-            {/* Project 1 - Senior Lifelong Learning Platform */}
-            <TiltCard className="card-glow bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg overflow-hidden hover:border-[var(--accent-cyan)] transition-colors duration-300">
-              <div className="h-32 bg-gradient-to-br from-[var(--bg-tertiary)] to-[var(--bg-secondary)] flex items-center justify-center">
-                <span className="text-5xl">🌐</span>
-              </div>
-              <div style={{padding: '24px'}}>
-                <div className="flex justify-between items-start" style={{marginBottom: '8px'}}>
-                  <h3 className="text-lg font-semibold text-[var(--accent-cyan)]">Senior Lifelong Learning Platform</h3>
-                  <span className="text-xs font-mono text-[var(--accent-green)]">2024-2025</span>
-                </div>
-                <p className="text-[var(--text-muted)] text-xs" style={{marginBottom: '12px'}}>Graduate Researcher - Monash University</p>
-                <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '16px'}}>Developed a web platform for older Australians (60+) with digital literacy guides and health resources. Conducted comprehensive security assessment addressing SQL Injection, XSS, CSRF, and API security using OWASP ZAP, Nikto, and Nmap.</p>
-                <div className="flex flex-wrap" style={{gap: '8px'}}>
-                  <span className="text-xs font-mono bg-[var(--bg-tertiary)] rounded text-[var(--accent-green)]" style={{padding: '4px 8px'}}>OWASP ZAP</span>
-                  <span className="text-xs font-mono bg-[var(--bg-tertiary)] rounded text-[var(--accent-green)]" style={{padding: '4px 8px'}}>Nikto</span>
-                  <span className="text-xs font-mono bg-[var(--bg-tertiary)] rounded text-[var(--accent-green)]" style={{padding: '4px 8px'}}>Nmap</span>
-                  <span className="text-xs font-mono bg-[var(--bg-tertiary)] rounded text-[var(--accent-green)]" style={{padding: '4px 8px'}}>TLS/SSL</span>
-                </div>
-              </div>
-            </TiltCard>
-
-            {/* Project 2 - Indoor Positioning System */}
-            <TiltCard className="card-glow bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg overflow-hidden hover:border-[var(--accent-cyan)] transition-colors duration-300">
-              <div className="h-32 bg-gradient-to-br from-[var(--bg-tertiary)] to-[var(--bg-secondary)] flex items-center justify-center">
-                <span className="text-5xl">📍</span>
-              </div>
-              <div style={{padding: '24px'}}>
-                <div className="flex justify-between items-start" style={{marginBottom: '8px'}}>
-                  <h3 className="text-lg font-semibold text-[var(--accent-cyan)]">Indoor Positioning System</h3>
-                  <span className="text-xs font-mono text-[var(--accent-green)]">2022-2023</span>
-                </div>
-                <p className="text-[var(--text-muted)] text-xs" style={{marginBottom: '12px'}}>Undergraduate Researcher - Karunya Institute</p>
-                <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '16px'}}>Built Android app using BLE beacons for GPS-denied environments. Implemented Kalman filter for signal smoothing, trilateration algorithm for location calculation, and Dijkstra&apos;s algorithm for optimal navigation routes. Co-authored IEEE research paper.</p>
-                <div className="flex flex-wrap" style={{gap: '8px'}}>
-                  <span className="text-xs font-mono bg-[var(--bg-tertiary)] rounded text-[var(--accent-green)]" style={{padding: '4px 8px'}}>Android</span>
-                  <span className="text-xs font-mono bg-[var(--bg-tertiary)] rounded text-[var(--accent-green)]" style={{padding: '4px 8px'}}>BLE</span>
-                  <span className="text-xs font-mono bg-[var(--bg-tertiary)] rounded text-[var(--accent-green)]" style={{padding: '4px 8px'}}>Java</span>
-                  <span className="text-xs font-mono bg-[var(--bg-tertiary)] rounded text-[var(--accent-green)]" style={{padding: '4px 8px'}}>IEEE</span>
-                </div>
-              </div>
-            </TiltCard>
-
-            </div>
-          </ScrollAnimation>
-        </div>
-      </section>
+      <ScrollAnimation>
+        <ProjectsSection />
+      </ScrollAnimation>
 
       {/* Divider */}
       <CyberDivider delay={100} />
