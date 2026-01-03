@@ -24,6 +24,7 @@ import FloatingElements from "@/components/FloatingElements";
 import Parallax3DImage from "@/components/Parallax3DImage";
 import CyberGrid from "@/components/CyberGrid";
 import ScanLine from "@/components/ScanLine";
+import SecurityResearch from "@/components/SecurityResearch";
 
 export default function Home() {
   return (
@@ -262,6 +263,14 @@ export default function Home() {
           </ScrollAnimation>
         </div>
       </section>
+
+      {/* Divider */}
+      <CyberDivider delay={100} />
+
+      {/* Security Research Section */}
+      <ScrollAnimation>
+        <SecurityResearch />
+      </ScrollAnimation>
 
       {/* Divider */}
       <CyberDivider delay={100} />

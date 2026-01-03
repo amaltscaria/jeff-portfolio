@@ -8,6 +8,7 @@ export default function LoadingScreen() {
   const [isComplete, setIsComplete] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [hasSeenLoader, setHasSeenLoader] = useState(false);
 
   const loadingMessages = [
     'INITIALIZING',
@@ -18,13 +19,34 @@ export default function LoadingScreen() {
     'ACCESS GRANTED',
   ];
 
+  // Check if user is navigating back from evidence page
   useEffect(() => {
-    setIsMounted(true);
-    // Scroll to top on page load/refresh
-    window.scrollTo(0, 0);
+    // Check if coming back from evidence page (flag set when visiting evidence)
+    const fromEvidence = sessionStorage.getItem('visitingEvidence');
+
+    if (fromEvidence) {
+      // Clear the flag and skip loader - don't scroll, let hash handle it
+      sessionStorage.removeItem('visitingEvidence');
+      setHasSeenLoader(true);
+      setIsHidden(true);
+      // Scroll to research section after a brief delay
+      setTimeout(() => {
+        const researchSection = document.getElementById('research');
+        if (researchSection) {
+          researchSection.scrollIntoView({ behavior: 'instant' });
+        }
+      }, 100);
+    } else {
+      // Show loader for fresh load, reload, or direct navigation
+      setIsMounted(true);
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   useEffect(() => {
+    // Skip if already seen
+    if (hasSeenLoader) return;
+
     // Progress animation - slower for more dramatic effect
     const progressInterval = setInterval(() => {
       setProgress((prev) => {
@@ -61,7 +83,7 @@ export default function LoadingScreen() {
       clearTimeout(completeTimeout);
       clearTimeout(hideTimeout);
     };
-  }, []);
+  }, [hasSeenLoader]);
 
   if (isHidden) return null;
 
