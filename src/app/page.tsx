@@ -323,6 +323,7 @@ export default function Home() {
               <div className="cert-glow text-3xl" style={{marginBottom: '16px'}}>🏆</div>
               <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '8px'}}>CCNP</h3>
               <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '8px'}}>Cisco Certified Network Professional</p>
+              <p className="text-[var(--text-muted)] text-xs" style={{marginBottom: '12px'}}>Advanced enterprise networking skills including routing, switching, security, and troubleshooting complex networks.</p>
               <span className="text-[var(--accent-green)] font-mono text-xs">Cisco</span>
             </TiltCard>
 
@@ -331,6 +332,7 @@ export default function Home() {
               <div className="cert-glow text-3xl" style={{marginBottom: '16px'}}>🏆</div>
               <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '8px'}}>CCNA</h3>
               <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '8px'}}>Cisco Certified Network Associate</p>
+              <p className="text-[var(--text-muted)] text-xs" style={{marginBottom: '12px'}}>Foundational networking knowledge covering IP connectivity, network access, security fundamentals, and automation.</p>
               <span className="text-[var(--accent-green)] font-mono text-xs">Cisco</span>
             </TiltCard>
 
@@ -339,6 +341,7 @@ export default function Home() {
               <div className="cert-glow text-3xl" style={{marginBottom: '16px'}}>☁️</div>
               <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '8px'}}>AWS Solutions Architect</h3>
               <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '8px'}}>Associate Level Certification</p>
+              <p className="text-[var(--text-muted)] text-xs" style={{marginBottom: '12px'}}>Designing distributed systems on AWS including compute, storage, networking, and security best practices.</p>
               <span className="text-[var(--accent-green)] font-mono text-xs">Amazon Web Services</span>
             </TiltCard>
 
@@ -347,6 +350,7 @@ export default function Home() {
               <div className="cert-glow text-3xl" style={{marginBottom: '16px'}}>🐧</div>
               <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '8px'}}>RHCE</h3>
               <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '8px'}}>Red Hat Certified Engineer</p>
+              <p className="text-[var(--text-muted)] text-xs" style={{marginBottom: '12px'}}>Linux system administration, automation with Ansible, and managing enterprise infrastructure at scale.</p>
               <span className="text-[var(--accent-green)] font-mono text-xs">Red Hat</span>
             </TiltCard>
 
@@ -355,6 +359,7 @@ export default function Home() {
               <div className="cert-glow text-3xl" style={{marginBottom: '16px'}}>🔐</div>
               <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '8px'}}>Cyber Security Training</h3>
               <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '8px'}}>Professional Security Training Program</p>
+              <p className="text-[var(--text-muted)] text-xs" style={{marginBottom: '12px'}}>Comprehensive training in threat detection, incident response, vulnerability assessment, and security operations.</p>
               <span className="text-[var(--accent-green)] font-mono text-xs">UST Global</span>
             </TiltCard>
 
@@ -363,6 +368,7 @@ export default function Home() {
               <div className="cert-glow text-3xl" style={{marginBottom: '16px'}}>🎓</div>
               <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '8px'}}>Master of Cybersecurity</h3>
               <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '8px'}}>Graduated December 2025</p>
+              <p className="text-[var(--text-muted)] text-xs" style={{marginBottom: '12px'}}>Advanced studies in network security, penetration testing, secure software development, and cloud security.</p>
               <span className="text-[var(--accent-green)] font-mono text-xs">Monash University</span>
             </TiltCard>
 
@@ -371,6 +377,7 @@ export default function Home() {
               <div className="cert-glow text-3xl" style={{marginBottom: '16px'}}>⛓️</div>
               <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '8px'}}>Blockchain: LFS170x</h3>
               <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '8px'}}>Understanding Blockchain Uses & Implications</p>
+              <p className="text-[var(--text-muted)] text-xs" style={{marginBottom: '12px'}}>Distributed ledger technology, smart contracts, cryptocurrency fundamentals, and enterprise blockchain applications.</p>
               <span className="text-[var(--accent-green)] font-mono text-xs">Linux Foundation</span>
             </TiltCard>
 
