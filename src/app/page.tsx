@@ -175,10 +175,10 @@ export default function Home() {
 
           {/* Skills Grid */}
           <ScrollAnimation delay={100} className="w-full">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full" style={{gap: '32px'}}>
+            <div className="flex flex-wrap justify-center w-full" style={{gap: '32px'}}>
 
             {/* Networking */}
-            <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300" style={{padding: '24px'}}>
+            <div className="w-full md:w-[calc(50%-16px)] lg:w-[calc(25%-24px)] bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300" style={{padding: '24px'}}>
               <div className="text-3xl" style={{marginBottom: '16px'}}>🌐</div>
               <h3 className="text-xl font-mono text-[var(--accent-cyan)]" style={{marginBottom: '16px'}}>Networking</h3>
               <ul className="text-[var(--text-secondary)] text-sm" style={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
@@ -191,7 +191,7 @@ export default function Home() {
             </div>
 
             {/* Security */}
-            <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300" style={{padding: '24px'}}>
+            <div className="w-full md:w-[calc(50%-16px)] lg:w-[calc(25%-24px)] bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300" style={{padding: '24px'}}>
               <div className="text-3xl" style={{marginBottom: '16px'}}>🔐</div>
               <h3 className="text-xl font-mono text-[var(--accent-cyan)]" style={{marginBottom: '16px'}}>Security</h3>
               <ul className="text-[var(--text-secondary)] text-sm" style={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
@@ -203,8 +203,21 @@ export default function Home() {
               </ul>
             </div>
 
+            {/* Advanced Security */}
+            <div className="w-full md:w-[calc(50%-16px)] lg:w-[calc(25%-24px)] bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300" style={{padding: '24px'}}>
+              <div className="text-3xl" style={{marginBottom: '16px'}}>🛡️</div>
+              <h3 className="text-xl font-mono text-[var(--accent-cyan)]" style={{marginBottom: '16px'}}>Advanced Security</h3>
+              <ul className="text-[var(--text-secondary)] text-sm" style={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
+                <li className="flex items-center gap-2"><span className="text-[var(--accent-green)]">&gt;</span> Social Engineering</li>
+                <li className="flex items-center gap-2"><span className="text-[var(--accent-green)]">&gt;</span> Zero Trust Architecture</li>
+                <li className="flex items-center gap-2"><span className="text-[var(--accent-green)]">&gt;</span> Endpoint Security</li>
+                <li className="flex items-center gap-2"><span className="text-[var(--accent-green)]">&gt;</span> Identity & Access Management</li>
+                <li className="flex items-center gap-2"><span className="text-[var(--accent-green)]">&gt;</span> Malware Analysis</li>
+              </ul>
+            </div>
+
             {/* Cloud */}
-            <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300" style={{padding: '24px'}}>
+            <div className="w-full md:w-[calc(50%-16px)] lg:w-[calc(25%-24px)] bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300" style={{padding: '24px'}}>
               <div className="text-3xl" style={{marginBottom: '16px'}}>☁️</div>
               <h3 className="text-xl font-mono text-[var(--accent-cyan)]" style={{marginBottom: '16px'}}>Cloud</h3>
               <ul className="text-[var(--text-secondary)] text-sm" style={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
@@ -217,7 +230,7 @@ export default function Home() {
             </div>
 
             {/* Development */}
-            <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300" style={{padding: '24px'}}>
+            <div className="w-full md:w-[calc(50%-16px)] lg:w-[calc(25%-24px)] bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300" style={{padding: '24px'}}>
               <div className="text-3xl" style={{marginBottom: '16px'}}>💻</div>
               <h3 className="text-xl font-mono text-[var(--accent-cyan)]" style={{marginBottom: '16px'}}>Development</h3>
               <ul className="text-[var(--text-secondary)] text-sm" style={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
@@ -241,12 +254,14 @@ export default function Home() {
                   <SkillBar name="Penetration Testing" percentage={88} delay={100} color="green" />
                   <SkillBar name="Cloud Security (AWS)" percentage={85} delay={200} color="cyan" />
                   <SkillBar name="Vulnerability Assessment" percentage={90} delay={300} color="green" />
+                  <SkillBar name="Zero Trust Architecture" percentage={82} delay={400} color="cyan" />
                 </div>
                 <div>
                   <SkillBar name="Python" percentage={82} delay={50} color="green" />
                   <SkillBar name="Linux Administration" percentage={92} delay={150} color="cyan" />
                   <SkillBar name="Cisco Networking" percentage={94} delay={250} color="green" />
-                  <SkillBar name="Incident Response" percentage={80} delay={350} color="cyan" />
+                  <SkillBar name="Malware Analysis" percentage={78} delay={350} color="cyan" />
+                  <SkillBar name="Identity & Access Mgmt" percentage={80} delay={450} color="green" />
                 </div>
               </div>
             </div>
@@ -301,10 +316,10 @@ export default function Home() {
 
           {/* Certs Grid */}
           <ScrollAnimation delay={100} className="w-full">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full" style={{gap: '24px'}}>
+            <div className="flex flex-wrap justify-center w-full" style={{gap: '24px'}}>
 
             {/* CCNP */}
-            <TiltCard className="card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px'}}>
+            <TiltCard className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px'}}>
               <div className="cert-glow text-3xl" style={{marginBottom: '16px'}}>🏆</div>
               <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '8px'}}>CCNP</h3>
               <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '8px'}}>Cisco Certified Network Professional</p>
@@ -312,7 +327,7 @@ export default function Home() {
             </TiltCard>
 
             {/* CCNA */}
-            <TiltCard className="card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px', animationDelay: '0.3s'}}>
+            <TiltCard className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px', animationDelay: '0.3s'}}>
               <div className="cert-glow text-3xl" style={{marginBottom: '16px'}}>🏆</div>
               <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '8px'}}>CCNA</h3>
               <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '8px'}}>Cisco Certified Network Associate</p>
@@ -320,7 +335,7 @@ export default function Home() {
             </TiltCard>
 
             {/* AWS */}
-            <TiltCard className="card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px', animationDelay: '0.6s'}}>
+            <TiltCard className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px', animationDelay: '0.6s'}}>
               <div className="cert-glow text-3xl" style={{marginBottom: '16px'}}>☁️</div>
               <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '8px'}}>AWS Solutions Architect</h3>
               <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '8px'}}>Associate Level Certification</p>
@@ -328,7 +343,7 @@ export default function Home() {
             </TiltCard>
 
             {/* RHCE */}
-            <TiltCard className="card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px', animationDelay: '0.9s'}}>
+            <TiltCard className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px', animationDelay: '0.9s'}}>
               <div className="cert-glow text-3xl" style={{marginBottom: '16px'}}>🐧</div>
               <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '8px'}}>RHCE</h3>
               <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '8px'}}>Red Hat Certified Engineer</p>
@@ -336,7 +351,7 @@ export default function Home() {
             </TiltCard>
 
             {/* Cyber Security Training */}
-            <TiltCard className="card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px', animationDelay: '1.2s'}}>
+            <TiltCard className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px', animationDelay: '1.2s'}}>
               <div className="cert-glow text-3xl" style={{marginBottom: '16px'}}>🔐</div>
               <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '8px'}}>Cyber Security Training</h3>
               <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '8px'}}>Professional Security Training Program</p>
@@ -344,11 +359,19 @@ export default function Home() {
             </TiltCard>
 
             {/* Master's Degree */}
-            <TiltCard className="card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px', animationDelay: '1.5s'}}>
+            <TiltCard className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px', animationDelay: '1.5s'}}>
               <div className="cert-glow text-3xl" style={{marginBottom: '16px'}}>🎓</div>
               <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '8px'}}>Master of Cybersecurity</h3>
               <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '8px'}}>Graduated December 2025</p>
               <span className="text-[var(--accent-green)] font-mono text-xs">Monash University</span>
+            </TiltCard>
+
+            {/* Blockchain Certificate */}
+            <TiltCard className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px', animationDelay: '1.8s'}}>
+              <div className="cert-glow text-3xl" style={{marginBottom: '16px'}}>⛓️</div>
+              <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '8px'}}>Blockchain: LFS170x</h3>
+              <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '8px'}}>Understanding Blockchain Uses & Implications</p>
+              <span className="text-[var(--accent-green)] font-mono text-xs">Linux Foundation</span>
             </TiltCard>
 
             </div>
@@ -414,6 +437,20 @@ export default function Home() {
                 </div>
                 <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-[var(--accent-green)] rounded-full border-4 border-[var(--bg-primary)]" style={{transform: 'translateX(-50%)', top: '24px'}}></div>
                 <div className="md:w-[45%] md:text-right md:order-1"></div>
+              </div>
+
+              {/* Bensoft Internship */}
+              <div className="relative flex flex-col md:flex-row md:justify-between items-start" style={{paddingLeft: '32px', paddingRight: '0'}}>
+                <div className="md:w-[45%] md:text-right md:order-1" style={{paddingRight: '32px'}}>
+                  <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300" style={{padding: '24px'}}>
+                    <span className="text-[var(--accent-green)] font-mono text-xs">Jun 2022 - Jul 2022</span>
+                    <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginTop: '8px'}}>Intern</h3>
+                    <p className="text-[var(--text-secondary)] text-sm" style={{marginTop: '4px'}}>Bensoft Systems (P) Ltd, Kerala</p>
+                    <p className="text-[var(--text-muted)] text-sm" style={{marginTop: '12px'}}>Completed internship focusing on computer systems and technology. Gained hands-on experience with IT infrastructure and software systems.</p>
+                  </div>
+                </div>
+                <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-[var(--accent-cyan)] rounded-full border-4 border-[var(--bg-primary)]" style={{transform: 'translateX(-50%)', top: '24px'}}></div>
+                <div className="md:w-[45%] md:order-2"></div>
               </div>
 
               {/* Bachelor's Degree */}
