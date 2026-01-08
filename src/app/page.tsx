@@ -28,6 +28,12 @@ import SecurityResearch from "@/components/SecurityResearch";
 import LiveTerminalDemo from "@/components/LiveTerminalDemo";
 import ConsoleEasterEgg from "@/components/ConsoleEasterEgg";
 import ProjectsSection from "@/components/ProjectsSection";
+import AITerminalChat from "@/components/AITerminalChat";
+import LiveThreatMap from "@/components/LiveThreatMap";
+import EncryptionDemo from "@/components/EncryptionDemo";
+import PacketVisualizer from "@/components/PacketVisualizer";
+import SteganographyTool from "@/components/SteganographyTool";
+import SQLInjectionPlayground from "@/components/SQLInjectionPlayground";
 
 export default function Home() {
   return (
@@ -286,18 +292,88 @@ export default function Home() {
       {/* Divider */}
       <CyberDivider delay={100} />
 
-      {/* Security Research Section */}
-      <ScrollAnimation>
-        <SecurityResearch />
-      </ScrollAnimation>
+      {/* Experience & Education Section */}
+      <section id="experience" className="relative z-10 bg-[var(--bg-secondary)]/50" style={{padding: '96px 5%'}}>
+        <div className="w-full flex flex-col items-center">
+          {/* Section Header */}
+          <ScrollAnimation>
+            <div className="text-center" style={{marginBottom: '64px'}}>
+              <span className="font-mono text-sm text-[var(--accent-green)]">// experience</span>
+              <h2 className="text-4xl font-bold text-[var(--text-primary)]" style={{marginTop: '8px'}}><GlitchText>Journey</GlitchText></h2>
+              <div className="w-16 h-1 bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-green)] mx-auto rounded" style={{marginTop: '16px'}}></div>
+            </div>
+          </ScrollAnimation>
 
-      {/* Divider */}
-      <CyberDivider delay={100} />
+          {/* Timeline */}
+          <ScrollAnimation delay={100}>
+            <div className="w-full max-w-4xl mx-auto relative">
+            {/* Timeline Line */}
+            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-[2px] bg-[var(--border-color)]" style={{transform: 'translateX(-50%)'}}></div>
 
-      {/* Live Terminal Demo Section */}
-      <ScrollAnimation>
-        <LiveTerminalDemo />
-      </ScrollAnimation>
+            {/* Timeline Items */}
+            <div className="flex flex-col" style={{gap: '48px'}}>
+
+              {/* Master's Degree */}
+              <div className="relative flex flex-col md:flex-row md:justify-between items-start" style={{paddingLeft: '32px', paddingRight: '0'}}>
+                <div className="md:w-[45%] md:text-right md:order-1 order-2" style={{paddingRight: '32px'}}>
+                  <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300" style={{padding: '24px'}}>
+                    <span className="text-[var(--accent-green)] font-mono text-xs">Feb 2024 - Dec 2025</span>
+                    <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginTop: '8px'}}>Master of Information Technology</h3>
+                    <p className="text-[var(--text-secondary)] text-sm" style={{marginTop: '4px'}}>Monash University, Melbourne (Cybersecurity Major)</p>
+                    <p className="text-[var(--text-muted)] text-sm" style={{marginTop: '12px'}}>Network Security, Penetration Testing, Security Assessment, Cloud Security, Secure Software Development.</p>
+                  </div>
+                </div>
+                <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-[var(--accent-cyan)] rounded-full border-4 border-[var(--bg-primary)]" style={{transform: 'translateX(-50%)', top: '24px'}}></div>
+                <div className="md:w-[45%] md:order-2 order-1"></div>
+              </div>
+
+              {/* Network Engineer */}
+              <div className="relative flex flex-col md:flex-row md:justify-between items-start" style={{paddingLeft: '32px', paddingRight: '0'}}>
+                <div className="md:w-[45%] md:order-2" style={{paddingLeft: '32px'}}>
+                  <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300" style={{padding: '24px'}}>
+                    <span className="text-[var(--accent-green)] font-mono text-xs">Jul 2023 - Dec 2023</span>
+                    <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginTop: '8px'}}>Network Engineer</h3>
+                    <p className="text-[var(--text-secondary)] text-sm" style={{marginTop: '4px'}}>Soften Technologies, India</p>
+                    <p className="text-[var(--text-muted)] text-sm" style={{marginTop: '12px'}}>Installed and maintained network hardware including switches, routers, and firewalls. Monitored performance and ensured network security through access control and firewall configuration.</p>
+                  </div>
+                </div>
+                <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-[var(--accent-green)] rounded-full border-4 border-[var(--bg-primary)]" style={{transform: 'translateX(-50%)', top: '24px'}}></div>
+                <div className="md:w-[45%] md:text-right md:order-1"></div>
+              </div>
+
+              {/* Bensoft Internship */}
+              <div className="relative flex flex-col md:flex-row md:justify-between items-start" style={{paddingLeft: '32px', paddingRight: '0'}}>
+                <div className="md:w-[45%] md:text-right md:order-1" style={{paddingRight: '32px'}}>
+                  <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300" style={{padding: '24px'}}>
+                    <span className="text-[var(--accent-green)] font-mono text-xs">Jun 2022 - Jul 2022</span>
+                    <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginTop: '8px'}}>Intern</h3>
+                    <p className="text-[var(--text-secondary)] text-sm" style={{marginTop: '4px'}}>Bensoft Systems (P) Ltd, Kerala</p>
+                    <p className="text-[var(--text-muted)] text-sm" style={{marginTop: '12px'}}>Completed internship focusing on computer systems and technology. Gained hands-on experience with IT infrastructure and software systems.</p>
+                  </div>
+                </div>
+                <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-[var(--accent-cyan)] rounded-full border-4 border-[var(--bg-primary)]" style={{transform: 'translateX(-50%)', top: '24px'}}></div>
+                <div className="md:w-[45%] md:order-2"></div>
+              </div>
+
+              {/* Bachelor's Degree */}
+              <div className="relative flex flex-col md:flex-row md:justify-between items-start" style={{paddingLeft: '32px', paddingRight: '0'}}>
+                <div className="md:w-[45%] md:text-right md:order-1" style={{paddingRight: '32px'}}>
+                  <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300" style={{padding: '24px'}}>
+                    <span className="text-[var(--accent-green)] font-mono text-xs">Jun 2019 - May 2023</span>
+                    <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginTop: '8px'}}>Bachelor of Technology</h3>
+                    <p className="text-[var(--text-secondary)] text-sm" style={{marginTop: '4px'}}>Karunya Institute of Technology, Coimbatore</p>
+                    <p className="text-[var(--text-muted)] text-sm" style={{marginTop: '12px'}}>Computer Science & Engineering. Courses in Data Structures, Algorithms, Database Management, Computer Networks, and Mobile App Development.</p>
+                  </div>
+                </div>
+                <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-[var(--accent-cyan)] rounded-full border-4 border-[var(--bg-primary)]" style={{transform: 'translateX(-50%)', top: '24px'}}></div>
+                <div className="md:w-[45%] md:order-2"></div>
+              </div>
+
+            </div>
+            </div>
+          </ScrollAnimation>
+        </div>
+      </section>
 
       {/* Divider */}
       <CyberDivider delay={100} />
@@ -397,88 +473,58 @@ export default function Home() {
       {/* Divider */}
       <CyberDivider delay={100} />
 
-      {/* Experience & Education Section */}
-      <section id="experience" className="relative z-10 bg-[var(--bg-secondary)]/50" style={{padding: '96px 5%'}}>
-        <div className="w-full flex flex-col items-center">
-          {/* Section Header */}
-          <ScrollAnimation>
-            <div className="text-center" style={{marginBottom: '64px'}}>
-              <span className="font-mono text-sm text-[var(--accent-green)]">// experience</span>
-              <h2 className="text-4xl font-bold text-[var(--text-primary)]" style={{marginTop: '8px'}}><GlitchText>Journey</GlitchText></h2>
-              <div className="w-16 h-1 bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-green)] mx-auto rounded" style={{marginTop: '16px'}}></div>
-            </div>
-          </ScrollAnimation>
+      {/* Security Research Section */}
+      <ScrollAnimation>
+        <SecurityResearch />
+      </ScrollAnimation>
 
-          {/* Timeline */}
-          <ScrollAnimation delay={100}>
-            <div className="w-full max-w-4xl mx-auto relative">
-            {/* Timeline Line */}
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-[2px] bg-[var(--border-color)]" style={{transform: 'translateX(-50%)'}}></div>
+      {/* Divider */}
+      <CyberDivider delay={100} />
 
-            {/* Timeline Items */}
-            <div className="flex flex-col" style={{gap: '48px'}}>
+      {/* Live Terminal Demo Section */}
+      <ScrollAnimation>
+        <LiveTerminalDemo />
+      </ScrollAnimation>
 
-              {/* Master's Degree */}
-              <div className="relative flex flex-col md:flex-row md:justify-between items-start" style={{paddingLeft: '32px', paddingRight: '0'}}>
-                <div className="md:w-[45%] md:text-right md:order-1 order-2" style={{paddingRight: '32px'}}>
-                  <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300" style={{padding: '24px'}}>
-                    <span className="text-[var(--accent-green)] font-mono text-xs">Feb 2024 - Dec 2025</span>
-                    <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginTop: '8px'}}>Master of Information Technology</h3>
-                    <p className="text-[var(--text-secondary)] text-sm" style={{marginTop: '4px'}}>Monash University, Melbourne (Cybersecurity Major)</p>
-                    <p className="text-[var(--text-muted)] text-sm" style={{marginTop: '12px'}}>Network Security, Penetration Testing, Security Assessment, Cloud Security, Secure Software Development.</p>
-                  </div>
-                </div>
-                <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-[var(--accent-cyan)] rounded-full border-4 border-[var(--bg-primary)]" style={{transform: 'translateX(-50%)', top: '24px'}}></div>
-                <div className="md:w-[45%] md:order-2 order-1"></div>
-              </div>
+      {/* Divider */}
+      <CyberDivider delay={100} />
 
-              {/* Network Engineer */}
-              <div className="relative flex flex-col md:flex-row md:justify-between items-start" style={{paddingLeft: '32px', paddingRight: '0'}}>
-                <div className="md:w-[45%] md:order-2" style={{paddingLeft: '32px'}}>
-                  <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300" style={{padding: '24px'}}>
-                    <span className="text-[var(--accent-green)] font-mono text-xs">Jul 2023 - Dec 2023</span>
-                    <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginTop: '8px'}}>Network Engineer</h3>
-                    <p className="text-[var(--text-secondary)] text-sm" style={{marginTop: '4px'}}>Soften Technologies, India</p>
-                    <p className="text-[var(--text-muted)] text-sm" style={{marginTop: '12px'}}>Installed and maintained network hardware including switches, routers, and firewalls. Monitored performance and ensured network security through access control and firewall configuration.</p>
-                  </div>
-                </div>
-                <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-[var(--accent-green)] rounded-full border-4 border-[var(--bg-primary)]" style={{transform: 'translateX(-50%)', top: '24px'}}></div>
-                <div className="md:w-[45%] md:text-right md:order-1"></div>
-              </div>
+      {/* Live Threat Map Section */}
+      <ScrollAnimation>
+        <LiveThreatMap />
+      </ScrollAnimation>
 
-              {/* Bensoft Internship */}
-              <div className="relative flex flex-col md:flex-row md:justify-between items-start" style={{paddingLeft: '32px', paddingRight: '0'}}>
-                <div className="md:w-[45%] md:text-right md:order-1" style={{paddingRight: '32px'}}>
-                  <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300" style={{padding: '24px'}}>
-                    <span className="text-[var(--accent-green)] font-mono text-xs">Jun 2022 - Jul 2022</span>
-                    <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginTop: '8px'}}>Intern</h3>
-                    <p className="text-[var(--text-secondary)] text-sm" style={{marginTop: '4px'}}>Bensoft Systems (P) Ltd, Kerala</p>
-                    <p className="text-[var(--text-muted)] text-sm" style={{marginTop: '12px'}}>Completed internship focusing on computer systems and technology. Gained hands-on experience with IT infrastructure and software systems.</p>
-                  </div>
-                </div>
-                <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-[var(--accent-cyan)] rounded-full border-4 border-[var(--bg-primary)]" style={{transform: 'translateX(-50%)', top: '24px'}}></div>
-                <div className="md:w-[45%] md:order-2"></div>
-              </div>
+      {/* Divider */}
+      <CyberDivider delay={100} />
 
-              {/* Bachelor's Degree */}
-              <div className="relative flex flex-col md:flex-row md:justify-between items-start" style={{paddingLeft: '32px', paddingRight: '0'}}>
-                <div className="md:w-[45%] md:text-right md:order-1" style={{paddingRight: '32px'}}>
-                  <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-all duration-300" style={{padding: '24px'}}>
-                    <span className="text-[var(--accent-green)] font-mono text-xs">Jun 2019 - May 2023</span>
-                    <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginTop: '8px'}}>Bachelor of Technology</h3>
-                    <p className="text-[var(--text-secondary)] text-sm" style={{marginTop: '4px'}}>Karunya Institute of Technology, Coimbatore</p>
-                    <p className="text-[var(--text-muted)] text-sm" style={{marginTop: '12px'}}>Computer Science & Engineering. Courses in Data Structures, Algorithms, Database Management, Computer Networks, and Mobile App Development.</p>
-                  </div>
-                </div>
-                <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-[var(--accent-cyan)] rounded-full border-4 border-[var(--bg-primary)]" style={{transform: 'translateX(-50%)', top: '24px'}}></div>
-                <div className="md:w-[45%] md:order-2"></div>
-              </div>
+      {/* Encryption Demo Section */}
+      <ScrollAnimation>
+        <EncryptionDemo />
+      </ScrollAnimation>
 
-            </div>
-            </div>
-          </ScrollAnimation>
-        </div>
-      </section>
+      {/* Divider */}
+      <CyberDivider delay={100} />
+
+      {/* Packet Visualizer Section */}
+      <ScrollAnimation>
+        <PacketVisualizer />
+      </ScrollAnimation>
+
+      {/* Divider */}
+      <CyberDivider delay={100} />
+
+      {/* Steganography Tool Section */}
+      <ScrollAnimation>
+        <SteganographyTool />
+      </ScrollAnimation>
+
+      {/* Divider */}
+      <CyberDivider delay={100} />
+
+      {/* SQL Injection Playground Section */}
+      <ScrollAnimation>
+        <SQLInjectionPlayground />
+      </ScrollAnimation>
 
       {/* Divider */}
       <CyberDivider delay={100} />
@@ -609,6 +655,7 @@ export default function Home() {
       </section>
 
       <BackToTop />
+      <AITerminalChat />
     </main>
   );
 }
