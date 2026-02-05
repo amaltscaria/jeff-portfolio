@@ -19,7 +19,7 @@ const getGreeting = (): string => {
 
 const getTerminalLines = (): TerminalLine[] => [
   { command: 'echo $GREETING', output: `${getGreeting()}, visitor! Welcome to my terminal.`, commandDelay: 0 },
-  { command: 'whoami', output: 'Jeffin Thomas', commandDelay: 100 },
+  { command: 'whoami', output: 'Jeffin Thomas Valliyakalayil', commandDelay: 100 },
   { command: 'cat role.txt', output: 'Cybersecurity Professional & Network Engineer', commandDelay: 100 },
   { command: 'cat education.txt', output: 'Master of Cybersecurity — Monash University (2025)', commandDelay: 100 },
   { command: 'cat location.txt', output: 'Melbourne, Australia', commandDelay: 100 },
@@ -165,20 +165,20 @@ export default function TerminalSequence() {
       {/* Glitch Name - shows after last command */}
       {showName && (
         <div className="animate-[fadeIn_0.5s_ease-out]">
-          <div className="relative inline-block text-4xl font-bold text-[var(--accent-cyan)] my-4 [text-shadow:var(--glow-cyan)]">
+          <div className="relative inline-block text-3xl font-bold text-[var(--accent-cyan)] my-4 [text-shadow:var(--glow-cyan)]">
             <span className="relative">
-              JEFFIN THOMAS
+              JEFFIN THOMAS VALLIYAKALAYIL
               <span
                 className="absolute top-0 left-0 w-full h-full text-[var(--accent-red)] animate-[glitch-1_2s_infinite_linear_alternate-reverse] [clip-path:polygon(0_0,100%_0,100%_45%,0_45%)]"
                 style={{left: '2px'}}
               >
-                JEFFIN THOMAS
+                JEFFIN THOMAS VALLIYAKALAYIL
               </span>
               <span
                 className="absolute top-0 left-0 w-full h-full text-[var(--accent-green)] animate-[glitch-2_3s_infinite_linear_alternate-reverse] [clip-path:polygon(0_55%,100%_55%,100%_100%,0_100%)]"
                 style={{left: '-2px'}}
               >
-                JEFFIN THOMAS
+                JEFFIN THOMAS VALLIYAKALAYIL
               </span>
             </span>
           </div>

@@ -13,10 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jeffin Thomas | Cybersecurity Professional",
+  title: "Jeffin Thomas Valliyakalayil | Cybersecurity Professional",
   description: "Cybersecurity Professional & Network Engineer with expertise in penetration testing, vulnerability assessment, and cloud security. CCNP, CCNA, AWS certified.",
   keywords: ["cybersecurity", "penetration testing", "network engineer", "security analyst", "Melbourne", "Australia"],
-  authors: [{ name: "Jeffin Thomas" }],
+  authors: [{ name: "Jeffin Thomas Valliyakalayil" }],
 };
 
 export default function RootLayout({

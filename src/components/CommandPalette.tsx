@@ -23,7 +23,7 @@ export default function CommandPalette() {
     { id: 'projects', label: 'Go to Projects', icon: '💼', action: () => scrollTo('projects'), shortcut: 'P' },
     { id: 'experience', label: 'Go to Experience', icon: '📅', action: () => scrollTo('experience'), shortcut: 'E' },
     { id: 'contact', label: 'Go to Contact', icon: '📧', action: () => scrollTo('contact') },
-    { id: 'resume', label: 'Download Resume', icon: '📄', action: () => window.open('/Jeffin_Thomas_Resume.pdf', '_blank'), shortcut: 'R' },
+    { id: 'resume', label: 'Download Resume', icon: '📄', action: () => window.open('/Jeffin_Thomas_Valliyakalayil_Resume.pdf', '_blank'), shortcut: 'R' },
     { id: 'linkedin', label: 'Open LinkedIn', icon: '💼', action: () => window.open('https://www.linkedin.com/in/jeffin-thomas-69a2a0348/', '_blank'), shortcut: 'L' },
     { id: 'email', label: 'Send Email', icon: '✉️', action: () => window.location.href = 'mailto:jeffint69@gmail.com' },
     { id: 'theme-green', label: 'Theme: Matrix (Green)', icon: '💚', action: () => setTheme('cyber-green') },

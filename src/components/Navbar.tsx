@@ -32,7 +32,7 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a href="/Jeffin_Thomas_Resume.pdf" download className="font-mono text-sm border border-[var(--accent-cyan)] text-[var(--accent-cyan)] rounded hover:bg-[var(--accent-cyan)] hover:text-[var(--bg-primary)] transition-colors" style={{padding: '8px 16px'}}>
+          <a href="/Jeffin_Thomas_Valliyakalayil_Resume.pdf" download className="font-mono text-sm border border-[var(--accent-cyan)] text-[var(--accent-cyan)] rounded hover:bg-[var(--accent-cyan)] hover:text-[var(--bg-primary)] transition-colors" style={{padding: '8px 16px'}}>
             Resume
           </a>
           <a href="#contact" className="font-mono text-sm bg-[var(--accent-cyan)] text-[var(--bg-primary)] rounded hover:bg-[var(--accent-green)] transition-colors" style={{padding: '8px 16px'}}>
@@ -65,7 +65,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="/Jeffin_Thomas_Resume.pdf"
+              href="/Jeffin_Thomas_Valliyakalayil_Resume.pdf"
               download
               onClick={closeMenu}
               className="font-mono text-sm border border-[var(--accent-cyan)] text-[var(--accent-cyan)] rounded hover:bg-[var(--accent-cyan)] hover:text-[var(--bg-primary)] transition-colors text-center"

@@ -9,7 +9,7 @@ interface Message {
 
 // Knowledge base about Jeffin
 const KNOWLEDGE = {
-  name: 'Jeffin Thomas',
+  name: 'Jeffin Thomas Valliyakalayil',
   title: 'Cybersecurity Professional & Network Engineer',
   location: 'Melbourne, Australia',
   email: 'jeffint69@gmail.com',

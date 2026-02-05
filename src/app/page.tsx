@@ -80,7 +80,7 @@ export default function Home() {
           <div className="relative w-[280px] h-[280px] lg:w-[320px] lg:h-[320px] rounded-full overflow-hidden border-[3px] border-[var(--accent-cyan)] shadow-[var(--glow-cyan)]">
             <Image
               src="/jeffin-photo.jpeg"
-              alt="Jeffin Thomas"
+              alt="Jeffin Thomas Valliyakalayil"
               fill
               className="object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-300 hover:scale-105"
               priority
@@ -619,7 +619,7 @@ export default function Home() {
               {/* Download Resume Button */}
               <div className="text-center" style={{marginTop: '40px'}}>
                 <MagneticButton
-                  href="/Jeffin_Thomas_Resume.pdf"
+                  href="/Jeffin_Thomas_Valliyakalayil_Resume.pdf"
                   download
                   className="inline-flex items-center font-mono text-sm bg-[var(--accent-green)] text-[var(--bg-primary)] rounded hover:bg-[var(--accent-cyan)] transition-colors"
                   style={{padding: '12px 24px', gap: '8px'}}
@@ -642,7 +642,7 @@ export default function Home() {
 
           {/* Footer */}
           <div className="text-center font-mono text-[var(--text-muted)] text-sm" style={{marginTop: '64px'}}>
-            <p>&copy; 2026 Jeffin Thomas</p>
+            <p>&copy; 2026 Jeffin Thomas Valliyakalayil</p>
             <p style={{marginTop: '8px'}}>
               <span className="text-[var(--accent-green)]">&lt;/&gt;</span> with <span className="text-[var(--accent-red)]">❤</span> in Melbourne
             </p>
