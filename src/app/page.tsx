@@ -457,6 +457,42 @@ export default function Home() {
               <span className="text-[var(--accent-green)] font-mono text-xs">Linux Foundation</span>
             </TiltCard>
 
+            {/* Mastercard Cybersecurity */}
+            <TiltCard className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px', animationDelay: '2.1s'}}>
+              <div className="cert-glow text-3xl" style={{marginBottom: '16px'}}>💳</div>
+              <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '8px'}}>Mastercard Cybersecurity</h3>
+              <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '8px'}}>Job Simulation - Security Awareness Team</p>
+              <p className="text-[var(--text-muted)] text-xs" style={{marginBottom: '12px'}}>Completed simulation identifying and reporting security threats including phishing, analyzing security training needs, and implementing training procedures for teams.</p>
+              <span className="text-[var(--accent-green)] font-mono text-xs block" style={{marginBottom: '12px'}}>Mastercard via Forage</span>
+              <a href="/Mastercad.pdf" target="_blank" rel="noopener noreferrer" className="inline-block text-xs font-mono text-[var(--accent-cyan)] hover:text-[var(--accent-green)] transition-colors">
+                View Certificate →
+              </a>
+            </TiltCard>
+
+            {/* Deloitte Cyber */}
+            <TiltCard className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px', animationDelay: '2.4s'}}>
+              <div className="cert-glow text-3xl" style={{marginBottom: '16px'}}>🛡️</div>
+              <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '8px'}}>Deloitte Australia Cyber</h3>
+              <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '8px'}}>Job Simulation - Cyber Incident Response</p>
+              <p className="text-[var(--text-muted)] text-xs" style={{marginBottom: '12px'}}>Completed simulation involving reading web activity logs, supporting clients in cyber security breaches, and identifying suspicious user activity.</p>
+              <span className="text-[var(--accent-green)] font-mono text-xs block" style={{marginBottom: '12px'}}>Deloitte Australia via Forage</span>
+              <a href="/Deloitte.pdf" target="_blank" rel="noopener noreferrer" className="inline-block text-xs font-mono text-[var(--accent-cyan)] hover:text-[var(--accent-green)] transition-colors">
+                View Certificate →
+              </a>
+            </TiltCard>
+
+            {/* Datacom Cyber Security Operations */}
+            <TiltCard className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] card-pulse bg-[var(--bg-card)] border border-[var(--border-color)] rounded-lg hover:border-[var(--accent-cyan)] transition-colors duration-300" style={{padding: '24px', animationDelay: '2.7s'}}>
+              <div className="cert-glow text-3xl" style={{marginBottom: '16px'}}>🔍</div>
+              <h3 className="text-lg font-semibold text-[var(--accent-cyan)]" style={{marginBottom: '8px'}}>Datacom Cyber Security Operations</h3>
+              <p className="text-[var(--text-secondary)] text-sm" style={{marginBottom: '8px'}}>Job Simulation - Cybersecurity Team</p>
+              <p className="text-[var(--text-muted)] text-xs" style={{marginBottom: '12px'}}>Investigated cyberattacks, produced comprehensive reports documenting findings, outlined key recommendations, and conducted comprehensive risk assessments.</p>
+              <span className="text-[var(--accent-green)] font-mono text-xs block" style={{marginBottom: '12px'}}>Datacom via Forage</span>
+              <a href="/Datacom.pdf" target="_blank" rel="noopener noreferrer" className="inline-block text-xs font-mono text-[var(--accent-cyan)] hover:text-[var(--accent-green)] transition-colors">
+                View Certificate →
+              </a>
+            </TiltCard>
+
             </div>
           </ScrollAnimation>
         </div>
